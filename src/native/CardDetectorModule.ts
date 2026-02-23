@@ -97,10 +97,10 @@ class CardDetectorModule {
       cannyLowThreshold: 50,
       cannyHighThreshold: 150,
       blurKernelSize: 5,
-      minAreaRatio: 0.01,   // 1% of frame - allow smaller cards
-      maxAreaRatio: 0.90,   // 90% of frame
+      minAreaRatio: 0.02,
+      maxAreaRatio: 0.85,
       targetAspectRatio: 1.586,
-      aspectRatioTolerance: 0.45,  // ±45% tolerance
+      aspectRatioTolerance: 0.35,
     };
 
     const mergedConfig = { ...defaults, ...config };

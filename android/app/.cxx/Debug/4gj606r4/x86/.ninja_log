@@ -1,6 +1,35 @@
 # ninja log v5
-0	13	0	clean	2fbcb0ab13b85222
-0	9	0	clean	2fbcb0ab13b85222
-13	951	7933048056137808	CMakeFiles/carddetector.dir/CardDetectorJNI.cpp.o	8b77bbb89ffd96b
-0	1223	7933048058903909	CMakeFiles/carddetector.dir/CardDetector.cpp.o	1ea6c6d6b98a20e2
-1223	2331	7933048069469430	C:/Users/USER/Desktop/PFE projet/android/app/build/intermediates/cxx/Debug/4gj606r4/obj/x86/libcarddetector.so	8af5591eedb6d3b1
+1	1035	7934812163154237	CMakeFiles/carddetector.dir/CardDetectorJNI.cpp.o	8b77bbb89ffd96b
+14	1218	7934812165069263	CMakeFiles/carddetector.dir/CardDetector.cpp.o	1ea6c6d6b98a20e2
+1219	2468	7934812177105559	C:/Users/USER/Desktop/PFE projet/android/app/build/intermediates/cxx/Debug/4gj606r4/obj/x86/libcarddetector.so	8af5591eedb6d3b1
+10	826	7934834060255709	CMakeFiles/carddetector.dir/CardDetectorJNI.cpp.o	8b77bbb89ffd96b
+3	1057	7934834062481453	CMakeFiles/carddetector.dir/CardDetector.cpp.o	1ea6c6d6b98a20e2
+1057	1618	7934834067464958	C:/Users/USER/Desktop/PFE projet/android/app/build/intermediates/cxx/Debug/4gj606r4/obj/x86/libcarddetector.so	8af5591eedb6d3b1
+26	915	7934837781602272	CMakeFiles/carddetector.dir/CardDetectorJNI.cpp.o	8b77bbb89ffd96b
+8	1140	7934837783787323	CMakeFiles/carddetector.dir/CardDetector.cpp.o	1ea6c6d6b98a20e2
+1140	1657	7934837788311590	C:/Users/USER/Desktop/PFE projet/android/app/build/intermediates/cxx/Debug/4gj606r4/obj/x86/libcarddetector.so	8af5591eedb6d3b1
+3	1132	7934839185039655	CMakeFiles/carddetector.dir/CardDetector.cpp.o	1ea6c6d6b98a20e2
+1132	1504	7934839188018968	C:/Users/USER/Desktop/PFE projet/android/app/build/intermediates/cxx/Debug/4gj606r4/obj/x86/libcarddetector.so	8af5591eedb6d3b1
+11	809	7934840138033901	CMakeFiles/carddetector.dir/CardDetectorJNI.cpp.o	8b77bbb89ffd96b
+20	1016	7934840140064277	CMakeFiles/carddetector.dir/CardDetector.cpp.o	1ea6c6d6b98a20e2
+1016	1487	7934840144298467	C:/Users/USER/Desktop/PFE projet/android/app/build/intermediates/cxx/Debug/4gj606r4/obj/x86/libcarddetector.so	8af5591eedb6d3b1
+20	833	7934841213743936	CMakeFiles/carddetector.dir/CardDetectorJNI.cpp.o	8b77bbb89ffd96b
+7	1012	7934841215548576	CMakeFiles/carddetector.dir/CardDetector.cpp.o	1ea6c6d6b98a20e2
+1013	1368	7934841218523969	C:/Users/USER/Desktop/PFE projet/android/app/build/intermediates/cxx/Debug/4gj606r4/obj/x86/libcarddetector.so	8af5591eedb6d3b1
+12	913	7934861384074856	CMakeFiles/carddetector.dir/CardDetectorJNI.cpp.o	8b77bbb89ffd96b
+4	1153	7934861386425421	CMakeFiles/carddetector.dir/CardDetector.cpp.o	1ea6c6d6b98a20e2
+1153	1702	7934861391363524	C:/Users/USER/Desktop/PFE projet/android/app/build/intermediates/cxx/Debug/4gj606r4/obj/x86/libcarddetector.so	8af5591eedb6d3b1
+18	900	7934871147694692	CMakeFiles/carddetector.dir/CardDetectorJNI.cpp.o	8b77bbb89ffd96b
+4	1103	7934871149700001	CMakeFiles/carddetector.dir/CardDetector.cpp.o	1ea6c6d6b98a20e2
+1104	1547	7934871153031190	C:/Users/USER/Desktop/PFE projet/android/app/build/intermediates/cxx/Debug/4gj606r4/obj/x86/libcarddetector.so	8af5591eedb6d3b1
+4	835	7934873107229693	CMakeFiles/carddetector.dir/CardDetectorJNI.cpp.o	8b77bbb89ffd96b
+16	1035	7934873109218306	CMakeFiles/carddetector.dir/CardDetector.cpp.o	1ea6c6d6b98a20e2
+1035	1385	7934873112068922	C:/Users/USER/Desktop/PFE projet/android/app/build/intermediates/cxx/Debug/4gj606r4/obj/x86/libcarddetector.so	8af5591eedb6d3b1
+6	1047	7935655510929555	CMakeFiles/carddetector.dir/CardDetectorJNI.cpp.o	8b77bbb89ffd96b
+19	1331	7935655513685378	CMakeFiles/carddetector.dir/CardDetector.cpp.o	1ea6c6d6b98a20e2
+1331	2583	7935655525721307	C:/Users/USER/Desktop/PFE projet/android/app/build/intermediates/cxx/Debug/4gj606r4/obj/x86/libcarddetector.so	8af5591eedb6d3b1
+22	1012	7935658612591564	CMakeFiles/carddetector.dir/CardDetectorJNI.cpp.o	8b77bbb89ffd96b
+6	1326	7935658615803867	CMakeFiles/carddetector.dir/CardDetector.cpp.o	1ea6c6d6b98a20e2
+1326	1864	7935658620739400	C:/Users/USER/Desktop/PFE projet/android/app/build/intermediates/cxx/Debug/4gj606r4/obj/x86/libcarddetector.so	8af5591eedb6d3b1
+4	1156	7935664446950012	CMakeFiles/carddetector.dir/CardDetector.cpp.o	1ea6c6d6b98a20e2
+1157	1569	7935664450146308	C:/Users/USER/Desktop/PFE projet/android/app/build/intermediates/cxx/Debug/4gj606r4/obj/x86/libcarddetector.so	8af5591eedb6d3b1

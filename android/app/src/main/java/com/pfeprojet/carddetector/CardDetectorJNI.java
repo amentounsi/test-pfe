@@ -49,16 +49,17 @@ public class CardDetectorJNI {
     /**
      * Detect card from YUV frame data
      * Optimized for camera frames
-     * 
-     * @param yBuffer Y plane direct buffer
-     * @param uBuffer U plane direct buffer
-     * @param vBuffer V plane direct buffer
-     * @param width Frame width
-     * @param height Frame height
-     * @param yRowStride Y plane row stride
-     * @param uvRowStride UV plane row stride
-     * @param uvPixelStride UV pixel stride
-     * @return float[10]: [isValid, confidence, x0, y0, x1, y1, x2, y2, x3, y3]
+     *
+     * @param yBuffer        Y plane direct buffer
+     * @param uBuffer        U plane direct buffer
+     * @param vBuffer        V plane direct buffer (Cr — used for red validation)
+     * @param width          Frame width
+     * @param height         Frame height
+     * @param yRowStride     Y plane row stride
+     * @param uvRowStride    UV plane row stride
+     * @param uvPixelStride  UV pixel stride (1=planar, 2=semi-planar)
+     * @param rotationDegrees Rotation to apply: 0, 90, 180, 270
+     * @return float[20]
      */
     public static native float[] nativeDetectFromYUV(
         ByteBuffer yBuffer,
@@ -68,7 +69,8 @@ public class CardDetectorJNI {
         int height,
         int yRowStride,
         int uvRowStride,
-        int uvPixelStride
+        int uvPixelStride,
+        int rotationDegrees
     );
     
     /**

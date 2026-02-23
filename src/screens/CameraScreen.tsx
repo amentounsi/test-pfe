@@ -213,14 +213,14 @@ export const CameraScreen: React.FC<CameraScreenProps> = ({
         )}
       </View>
       
-      {/* Debug Info */}
+      {/* Debug Info – stage-by-stage visibility */}
       {showDebugInfo && (
         <View style={styles.debugContainer}>
           <Text style={styles.debugText}>
-            Detection: {detectionResult?.isValid ? 'Valid' : 'None'}
+            Detection: {detectionResult?.isValid ? 'VALID' : 'NONE'}
           </Text>
           <Text style={styles.debugText}>
-            Confidence: {detectionResult?.confidence?.toFixed(2) || 'N/A'}
+            Confidence: {detectionResult?.confidence?.toFixed(3) || 'N/A'}
           </Text>
           <Text style={styles.debugText}>
             Frame: {detectionResult?.frameWidth}x{detectionResult?.frameHeight}
@@ -228,6 +228,30 @@ export const CameraScreen: React.FC<CameraScreenProps> = ({
           <Text style={styles.debugText}>
             View: {viewDimensions.width.toFixed(0)}x{viewDimensions.height.toFixed(0)}
           </Text>
+          {detectionResult?.debug && (
+            <>
+              <Text style={styles.debugSeparator}>── Pipeline ──</Text>
+              <Text style={styles.debugText}>
+                S1 edges: {detectionResult.debug.edgeWhitePixels} px
+              </Text>
+              <Text style={styles.debugText}>
+                S2 contours: {detectionResult.debug.totalContours} → top {detectionResult.debug.topNContours}
+              </Text>
+              <Text style={styles.debugText}>
+                S2 largest: {((detectionResult.debug.largestAreaRatio || 0) * 100).toFixed(2)}%
+              </Text>
+              <Text style={styles.debugSeparator}>── Stage 3 ──</Text>
+              <Text style={styles.debugText}>
+                S3 quads: {detectionResult.debug.candidateQuads}
+              </Text>
+              <Text style={styles.debugText}>
+                rej area: {detectionResult.debug.rejectedByArea ?? '?'} | approx: {detectionResult.debug.rejectedByApprox ?? '?'} | aspect: {detectionResult.debug.rejectedByAspect ?? '?'} | edge: {detectionResult.debug.rejectedByEdgeDensity ?? '?'}
+              </Text>
+              <Text style={styles.debugText}>
+                S4 best: {detectionResult.debug.bestScore?.toFixed(3) || '—'}
+              </Text>
+            </>
+          )}
         </View>
       )}
     </View>
@@ -301,6 +325,13 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontFamily: Platform.OS === 'android' ? 'monospace' : 'Courier',
     marginBottom: 4,
+  },
+  debugSeparator: {
+    color: '#888',
+    fontSize: 10,
+    fontFamily: Platform.OS === 'android' ? 'monospace' : 'Courier',
+    marginTop: 4,
+    marginBottom: 2,
   },
 });
 

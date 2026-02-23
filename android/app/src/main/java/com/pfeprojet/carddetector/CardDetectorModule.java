@@ -117,7 +117,7 @@ public class CardDetectorModule extends ReactContextBaseJavaModule {
     public java.util.Map<String, Object> getConstants() {
         final java.util.Map<String, Object> constants = new java.util.HashMap<>();
         constants.put("ID1_ASPECT_RATIO", 1.586);
-        constants.put("DEFAULT_MIN_AREA", 0.20);
+        constants.put("DEFAULT_MIN_AREA", 0.05);
         constants.put("DEFAULT_MAX_AREA", 0.85);
         constants.put("DEFAULT_RATIO_TOLERANCE", 0.10);
         return constants;

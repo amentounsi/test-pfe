@@ -32,7 +32,7 @@ export function detectCard(frame: Frame): CardDetectionResult {
 
   try {
     // Call native plugin
-    const result = plugin.call(frame) as CardDetectionResult;
+    const result = plugin.call(frame) as unknown as CardDetectionResult;
     
     // Validate result structure
     if (!result || typeof result !== 'object') {
@@ -57,6 +57,7 @@ export function detectCard(frame: Frame): CardDetectionResult {
         frameWidth: result.frameWidth,
         frameHeight: result.frameHeight,
         orientation: result.orientation,
+        debug: result.debug,
       };
     }
 
@@ -67,6 +68,7 @@ export function detectCard(frame: Frame): CardDetectionResult {
       frameWidth: result.frameWidth,
       frameHeight: result.frameHeight,
       error: result.error,
+      debug: result.debug,
     };
   } catch (error) {
     const errorMessage =

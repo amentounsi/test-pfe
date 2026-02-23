@@ -1,0 +1,620 @@
+﻿--------- beginning of main
+02-22 17:42:25.881  1435  1533 D AAL     : 02-22 05:42:25.815 BL= 789,ESS= 256, 02-22 05:42:25.832 BL= 788,ESS= 256, 02-22 05:42:25.848 BL= 787,ESS= 256, 02-22 05:42:25.865 BL= 786,ESS= 256, 02-22 05:42:25.881 BL= 785,ESS= 256, 
+02-22 17:42:25.964  1435  1533 D AAL     : 02-22 05:42:25.898 BL= 784,ESS= 256, 02-22 05:42:25.914 BL= 783,ESS= 256, 02-22 05:42:25.931 BL= 782,ESS= 256, 02-22 05:42:25.947 BL= 781,ESS= 256, 02-22 05:42:25.964 BL= 780,ESS= 256, 
+--------- beginning of system
+02-22 17:42:25.972  1858  3788 D ActivityManager: getProcessesInErrorState callingUid=10379, CallingPid=5618
+02-22 17:42:26.027  1858  2027 I mtkpower_client: perf_lock_acq, hdl:1269481, dur:3000, num:2, tid:2027
+02-22 17:42:26.027  1858  2027 I mtkpower_client: ret_hdl:1269498
+02-22 17:42:26.027  1858  2027 I mtkpower_client: perf_lock_rel, hdl:1269498, tid:2027
+02-22 17:42:26.028  1120  1173 I SbeHandle: end_default_hold_time HindID : 21
+02-22 17:42:26.028  1120  1173 I libPowerHal: [disableScenarioByHintId] Disable HindID : 21
+02-22 17:42:26.028  1120  1173 I libPowerHal: [disableScenarioByHintId] disableScenarioByHintId: HindID : 21
+02-22 17:42:26.028  1120  1173 I libPowerHal: [PD] MTKPOWER_HINT_PROCESS_CREATE update cmd:1408300 param:40
+02-22 17:42:26.028  1120  1173 I libPowerHal: [PD] MTKPOWER_HINT_PROCESS_CREATE update cmd:300c000 param:0
+02-22 17:42:26.031  1120  1173 I libPowerHal: [PD] MTKPOWER_HINT_PROCESS_CREATE update cmd:1000000 param:2
+02-22 17:42:26.032  1120  1173 I SbeHandle: end_default_hold_time HindID : 21
+02-22 17:42:26.032  1120  1173 I libPowerHal: [disableScenarioByHintId] Disable HindID : 21
+02-22 17:42:26.032  1120  1173 I libPowerHal: [PD] system_server update ONESHOT cmd:3410300 param:21
+02-22 17:42:26.042 25529 26214 D welinkBLE: KolunScanHelper receive kolun scan result:null mCallbackList.size:1
+02-22 17:42:26.043 25529 26214 I welinkBLE: deviceInfo is null, continue scan......
+02-22 17:42:26.047  1435  1533 D AAL     : 02-22 05:42:25.981 BL= 779,ESS= 256, 02-22 05:42:25.997 BL= 778,ESS= 256, 02-22 05:42:26.014 BL= 777,ESS= 256, 02-22 05:42:26.030 BL= 776,ESS= 256, 02-22 05:42:26.047 BL= 775,ESS= 256, 
+02-22 17:42:26.129  1435  1533 D AAL     : 02-22 05:42:26.063 BL= 774,ESS= 256, 02-22 05:42:26.080 BL= 773,ESS= 256, 02-22 05:42:26.096 BL= 772,ESS= 256, 02-22 05:42:26.113 BL= 771,ESS= 256, 02-22 05:42:26.129 BL= 770,ESS= 256, 
+02-22 17:42:26.178 20814 20814 V WarningView: isHomeActive, return
+02-22 17:42:26.178 20814 20814 V WarningView: isHomeActive, return
+02-22 17:42:26.206  1858  1905 D Griffin/CleanManager: dispatch clean index=12
+02-22 17:42:26.208  1858  1905 D ActivityTaskManager: getRecentTasksImpl call by 1000 flags = 2, 28 task(s):
+02-22 17:42:26.208  1858  1905 D ActivityTaskManager: Recent Task 0: taskId = 58690, comp = null
+02-22 17:42:26.208  1858  1905 D ActivityTaskManager: Recent Task 1: taskId = 58681, comp = ComponentInfo{com.instagram.android/com.instagram.android.activity.MainTabActivity}
+02-22 17:42:26.208  1858  1905 D ActivityTaskManager: Recent Task 2: taskId = 58686, comp = null
+02-22 17:42:26.208  1858  1905 D ActivityTaskManager: Recent Task 3: taskId = 58476, comp = ComponentInfo{com.facebook.katana/com.facebook.katana.LoginActivity}
+02-22 17:42:26.208  1858  1905 D ActivityTaskManager: Recent Task 4: taskId = 58610, comp = null
+02-22 17:42:26.208  1858  1905 D ActivityTaskManager: Recent Task 5: taskId = 58675, comp = null
+02-22 17:42:26.208  1858  1905 D ActivityTaskManager: Recent Task 6: taskId = 58679, comp = null
+02-22 17:42:26.208  1858  1905 D ActivityTaskManager: Recent Task 7: taskId = 58676, comp = ComponentInfo{com.discord/com.discord.main.MainDefault}
+02-22 17:42:26.208  1858  1905 D ActivityTaskManager: Recent Task 8: taskId = 58612, comp = ComponentInfo{com.facebook.orca/com.facebook.orca.auth.StartScreenActivity}
+02-22 17:42:26.208  1858  1905 D ActivityTaskManager: Recent Task 9: taskId = 58292, comp = null
+02-22 17:42:26.208  1858  1905 D ActivityTaskManager: Recent Task 10: taskId = 58673, comp = null
+02-22 17:42:26.208  1858  1905 D ActivityTaskManager: Recent Task 11: taskId = 58671, comp = ComponentInfo{com.google.android.youtube/com.google.android.youtube.app.honeycomb.Shell$HomeActivity}
+02-22 17:42:26.208  1858  1905 D ActivityTaskManager: Recent Task 12: taskId = 58478, comp = null
+02-22 17:42:26.208  1858  1905 D ActivityTaskManager: Recent Task 13: taskId = 58664, comp = ComponentInfo{com.android.vending/com.google.android.finsky.activities.MainActivityPrivate}
+02-22 17:42:26.208  1858  1905 D ActivityTaskManager: Recent Task 14: taskId = 58634, comp = ComponentInfo{eu.livesport.FlashScore_com/eu.livesport.LiveSport_cz.config.core.DefaultLauncher}
+02-22 17:42:26.208  1858  1905 D ActivityTaskManager: Recent Task 15: taskId = 58657, comp = null
+02-22 17:42:26.208  1858  1905 D ActivityTaskManager: Recent Task 16: taskId = 58659, comp = null
+02-22 17:42:26.208  1858  1905 D ActivityTaskManager: Recent Task 17: taskId = 58652, comp = null
+02-22 17:42:26.208  1858  1905 D ActivityTaskManager: Recent Task 18: taskId = 57546, comp = null
+02-22 17:42:26.208  1858  1905 D ActivityTaskManager: Recent Task 19: taskId = 58445, comp = null
+02-22 17:42:26.208  1858  1905 D ActivityTaskManager: Recent Task 20: taskId = 58382, comp = ComponentInfo{com.android.settings/com.android.settings.Settings}
+02-22 17:42:26.208  1858  1905 D ActivityTaskManager: Recent Task 21: taskId = 58548, comp = null
+02-22 17:42:26.208  1858  1905 D ActivityTaskManager: Recent Task 22: taskId = 58432, comp = null
+02-22 17:42:26.208  1858  1905 D ActivityTaskManager: Recent Task 23: taskId = 58541, comp = null
+02-22 17:42:26.208  1858  1905 D ActivityTaskManager: Recent Task 24: taskId = 58488, comp = null
+02-22 17:42:26.208  1858  1905 D ActivityTaskManager: Recent Task 25: taskId = 58477, comp = null
+02-22 17:42:26.208  1858  1905 D ActivityTaskManager: Recent Task 26: taskId = 58395, comp = null
+02-22 17:42:26.208  1858  1905 D ActivityTaskManager: Recent Task 27: taskId = 58306, comp = null
+02-22 17:42:26.212  1435  1533 D AAL     : 02-22 05:42:26.146 BL= 769,ESS= 256, 02-22 05:42:26.162 BL= 768,ESS= 256, 02-22 05:42:26.179 BL= 767,ESS= 256, 02-22 05:42:26.195 BL= 766,ESS= 256, 02-22 05:42:26.212 BL= 765,ESS= 256, 
+02-22 17:42:26.308  1407  1564 D ULogGuard: Monitoring: 16 threads, 0 requests, 0 time-bombs; 1 guards. ResetFlags = 0x7
+02-22 17:42:26.311  1435  1533 D AAL     : 02-22 05:42:26.245 BL= 764,ESS= 256, 02-22 05:42:26.261 BL= 763,ESS= 256, 02-22 05:42:26.278 BL= 762,ESS= 256, 02-22 05:42:26.294 BL= 761,ESS= 256, 02-22 05:42:26.311 BL= 760,ESS= 256, 
+02-22 17:42:26.336  1858  1882 I BaseFilesVerify: Base File verify start
+02-22 17:42:26.337  1858  1882 W BaseFilesVerify: jobs.xmlis not in fileProtect list,can not protect this file
+02-22 17:42:26.394  1435  1533 D AAL     : 02-22 05:42:26.327 BL= 759,ESS= 256, 02-22 05:42:26.344 BL= 758,ESS= 256, 02-22 05:42:26.360 BL= 757,ESS= 256, 02-22 05:42:26.377 BL= 756,ESS= 256, 02-22 05:42:26.394 BL= 755,ESS= 256, 
+02-22 17:42:26.409  1858  4569 I BaseFilesVerify: Base File verify start
+02-22 17:42:26.409  1858  4569 W BaseFilesVerify: 58690_task.xmlis not in fileProtect list,can not protect this file
+02-22 17:42:26.474  1858  3788 D ActivityManager: getProcessesInErrorState callingUid=10379, CallingPid=5618
+02-22 17:42:26.476  1435  1533 D AAL     : 02-22 05:42:26.410 BL= 754,ESS= 256, 02-22 05:42:26.426 BL= 753,ESS= 256, 02-22 05:42:26.443 BL= 752,ESS= 256, 02-22 05:42:26.460 BL= 751,ESS= 256, 02-22 05:42:26.476 BL= 750,ESS= 256, 
+02-22 17:42:26.529  1120  1173 I mtkpower@impl: [powerd_req] TIMER_MSG_PERF_LOCK_TIMEOUT hdl:1269493
+02-22 17:42:26.559  1435  1533 D AAL     : 02-22 05:42:26.493 BL= 749,ESS= 256, 02-22 05:42:26.509 BL= 748,ESS= 256, 02-22 05:42:26.526 BL= 747,ESS= 256, 02-22 05:42:26.542 BL= 746,ESS= 256, 02-22 05:42:26.559 BL= 745,ESS= 256, 
+02-22 17:42:26.641  1435  1533 D AAL     : 02-22 05:42:26.575 BL= 744,ESS= 256, 02-22 05:42:26.592 BL= 743,ESS= 256, 02-22 05:42:26.608 BL= 742,ESS= 256, 02-22 05:42:26.625 BL= 741,ESS= 256, 02-22 05:42:26.641 BL= 740,ESS= 256, 
+02-22 17:42:26.669 25529 26214 D welinkBLE: KolunScanHelper receive kolun scan result:null mCallbackList.size:1
+02-22 17:42:26.669 25529 26214 I welinkBLE: deviceInfo is null, continue scan......
+02-22 17:42:26.688  1160  1160 I BufferQueueProducer: [StatusBar#89](this:0xb4000078289b7f58,id:-1,api:0,p:-1,c:1160) queueBuffer: fps=4.98 dur=2006.21 max=1593.80 min=7.93
+02-22 17:42:26.689  1104  1104 I hwcomposer: [HWCDisplay] [Display_0 (type:1)] fps:32.618416,dur:1808.79,max:1118.15,min:4.15  
+02-22 17:42:26.740  1435  1533 D AAL     : 02-22 05:42:26.658 BL= 739,ESS= 256, 02-22 05:42:26.691 BL= 738,ESS= 256, 02-22 05:42:26.707 BL= 737,ESS= 256, 02-22 05:42:26.724 BL= 736,ESS= 256, 02-22 05:42:26.740 BL= 735,ESS= 256, 
+02-22 17:42:26.768  1160  1326 D SurfaceFlinger: calculateTimeoutTime, triggerInterval = 1 sec + 106706154 nsec
+02-22 17:42:26.773 25529 26214 D welinkBLE: KolunScanHelper receive kolun scan result:null mCallbackList.size:1
+02-22 17:42:26.773 25529 26214 I welinkBLE: deviceInfo is null, continue scan......
+02-22 17:42:26.787  1160  1160 I BufferQueueProducer: [com.pfeprojet/com.pfeprojet.MainActivity#403113](this:0xb400007828ce6638,id:-1,api:0,p:-1,c:1160) queueBuffer: fps=2.01 dur=1494.02 max=1428.37 min=16.14
+02-22 17:42:26.787  1160  1218 E surfaceflinger: == MALI DEBUG ===eglp_winsys_populate_image_templates ==12288
+02-22 17:42:26.804  1120  1155 I libPerfCtl: xgfGetFPS pid:2407 fps:-1
+02-22 17:42:26.805  1120  1155 I libPerfCtl: xgfGetFPS pid:5618 fps:-1
+02-22 17:42:26.805  1120  1155 I libPerfCtl: xgfGetFPS pid:24748 fps:-1
+02-22 17:42:26.805  1120  1155 I libPerfCtl: xgfGetFPS pid:24749 fps:-1
+02-22 17:42:26.805  1160  1218 E surfaceflinger: == MALI DEBUG ===eglp_winsys_populate_image_templates ==12288
+02-22 17:42:26.821  1160  1218 E surfaceflinger: == MALI DEBUG ===eglp_winsys_populate_image_templates ==12288
+02-22 17:42:26.823  1435  1533 D AAL     : 02-22 05:42:26.757 BL= 734,ESS= 256, 02-22 05:42:26.773 BL= 733,ESS= 256, 02-22 05:42:26.790 BL= 732,ESS= 256, 02-22 05:42:26.806 BL= 731,ESS= 256, 02-22 05:42:26.823 BL= 730,ESS= 256, 
+02-22 17:42:26.838  1160  1218 E surfaceflinger: == MALI DEBUG ===eglp_winsys_populate_image_templates ==12288
+02-22 17:42:26.905  1435  1533 D AAL     : 02-22 05:42:26.839 BL= 729,ESS= 256, 02-22 05:42:26.856 BL= 728,ESS= 256, 02-22 05:42:26.872 BL= 727,ESS= 256, 02-22 05:42:26.889 BL= 726,ESS= 256, 02-22 05:42:26.905 BL= 725,ESS= 256, 
+02-22 17:42:26.975  1858  2765 D ActivityManager: getProcessesInErrorState callingUid=10379, CallingPid=5618
+02-22 17:42:26.988  1435  1533 D AAL     : 02-22 05:42:26.922 BL= 724,ESS= 256, 02-22 05:42:26.938 BL= 723,ESS= 256, 02-22 05:42:26.955 BL= 722,ESS= 256, 02-22 05:42:26.971 BL= 721,ESS= 256, 02-22 05:42:26.988 BL= 720,ESS= 256, 
+02-22 17:42:27.071  1435  1533 D AAL     : 02-22 05:42:27.004 BL= 719,ESS= 256, 02-22 05:42:27.021 BL= 718,ESS= 256, 02-22 05:42:27.037 BL= 717,ESS= 256, 02-22 05:42:27.054 BL= 716,ESS= 256, 02-22 05:42:27.071 BL= 715,ESS= 256, 
+02-22 17:42:27.090  1089  1089 I zygote  : Delayed USAP Pool refill. New USAPs: 3
+02-22 17:42:27.099  1089  1089 D Zygote  : Forked child process 15863
+02-22 17:42:27.108  1089  1089 D Zygote  : Forked child process 15864
+02-22 17:42:27.116  1089  1089 D Zygote  : Forked child process 15865
+02-22 17:42:27.132  5618  5629 D BufferQueueConsumer: [SurfaceTexture-0-5618-775](id:15f200000473,api:2,p:5618,c:5618) disconnect
+02-22 17:42:27.132  5618  5629 W System  : A resource failed to call Surface.release. 
+02-22 17:42:27.133  1160  1211 D SurfaceFlinger: [SF client] REMOVE (0xb4000077388556f0) for (5618:com.instagram.android)
+02-22 17:42:27.135  1095  1095 D AudioALSAStreamOut: standby(), flag 8
+02-22 17:42:27.135  1095  1095 D AudioALSAStreamOut: standbyStreamOut(), halRequest 0, mDestroy 0, flag 8
+02-22 17:42:27.135  1095  1095 D AudioALSAStreamOut: close(), flags 8
+02-22 17:42:27.135  1095  1095 D AudioALSAPlaybackHandlerMixer: close(+), source flag 8, mDevice = 0x2, buffer_size 16384
+02-22 17:42:27.135  1095  1095 D audio_sw_mixer: sw_mixer_source_detach(), MIXER_PLAYBACK  , name T_DEEP
+02-22 17:42:27.135  1095  1095 D audio_sw_mixer: sw_mixer_manager_destroy_path(), MIXER_PLAYBACK  , path T_DEEP=>T_PRIMARY
+02-22 17:42:27.135  1095  1095 D audio_sw_mixer: dump_path_list(), MIXER_PLAYBACK  , no path
+02-22 17:42:27.136  1095  1095 D audio_sw_mixer: sw_mixer_target_detach(), MIXER_PLAYBACK  , name T_PRIMARY
+02-22 17:42:27.136  1095  1663 D audio_sw_mixer: sw_mixer_wait_to_mix(), MIXER_PLAYBACK  , target T_PRIMARY    thread exit direct mode
+02-22 17:42:27.136  1095  1663 D audio_sw_mixer: sw_mixer_mix_thread(), thread mix1:0 idle
+02-22 17:42:27.136  1095  1095 D AudioALSAPlaybackHandlerNormal: +close(), flag = 8, mDevice = 0x2
+02-22 17:42:27.136  1095  1095 D AudioALSAHardwareResourceManager: +stopOutputDevice(), mOutputDevices = 0x2, mStartOutputDevicesCount = 1
+02-22 17:42:27.136  1095  1095 D AudioALSAHardwareResourceManager: CloseSpeakerPath(), defined MTK_GENERIC_HAL
+02-22 17:42:27.136  1095  1095 D AudioALSADeviceConfigManager: ApplyDeviceTurnoffSequenceByName(), DeviceName = ext_speaker_output descriptor->DeviceStatusCounter = 1, Ctlsize=2
+02-22 17:42:27.137  1095  1095 D AudioALSADeviceConfigManager: ApplyDeviceTurnoffSequenceByName(), DeviceName = dual_speaker_output descriptor->DeviceStatusCounter = 1, Ctlsize=4
+02-22 17:42:27.139  1095  1095 D AudioALSAHardwareResourceManager: notifyOutputDeviceStatusChange(), device = 2, status = 1, sampleRate = 0, mOpenSpeakerPathCount = 0
+02-22 17:42:27.139  1095  1095 D AudioALSAStreamManager: speakerStatusChangeCb(), status = 1, sampleRate = 0
+02-22 17:42:27.139  1095  1095 D AudioALSAVoiceWakeUpController: updateSpeakerPlaybackStatus(), isSpeakerPlaying = 0
+02-22 17:42:27.139  1095  1095 D AudioALSAPlaybackHandlerBase: +closePcmDriver(), mPcm = 0xb40000723541d5d0
+02-22 17:42:27.140  1095  1095 D AudioALSAPlaybackHandlerBase: -closePcmDriver(), mPcm = 0x0
+02-22 17:42:27.140  1095  1095 D AudioALSADeviceConfigManager: ApplyDeviceTurnoffSequenceByName(), DeviceName = PLAYBACK3_TO_ADDA_DL descriptor->DeviceStatusCounter = 1, Ctlsize=4
+02-22 17:42:27.140  1095  1095 D AudioALSAPlaybackHandlerBase: DestroyAurisysLibManager()
+02-22 17:42:27.140  1095  1095 D aurisys_lib_handler: aurisys_arsi_destroy_handler(), lib_name aurisys_demo, 0xb400007285422150, arsi_destroy_handler, arsi_handler = 0xb4000072854236e0, retval = 0
+02-22 17:42:27.140  1095  1095 D aurisys_lib_manager: delete_aurisys_lib_manager(), manager 0xb400007225465650
+02-22 17:42:27.140  1095  1095 D AudioALSAPlaybackHandlerBase: closeWavDump()
+02-22 17:42:27.140  1095  1095 I [Awinic]: reset done !
+02-22 17:42:27.141  1095  1095 D [Awinic]: fade_in_out_reset done!
+02-22 17:42:27.141  1095  1095 D [Awinic]: spin reset done!
+02-22 17:42:27.141  1095  1095 D [Awinic]:  Reset Done !
+02-22 17:42:27.141  1095  1095 D AudioALSAPlaybackHandlerNormal: -close()
+02-22 17:42:27.141  1095  1095 D [Awinic]:  End Done !
+02-22 17:42:27.141  1095  1095 D AudioALSAPlaybackHandlerBase: DestroyAurisysLibManager()
+02-22 17:42:27.141  1095  1095 D aurisys_lib_handler: aurisys_arsi_destroy_handler(), lib_name mtk_bessound, 0xb40000728542b840, arsi_destroy_handler, arsi_handler = 0xb400007419f263e0, retval = 0
+02-22 17:42:27.141  1095  1095 D aurisys_lib_manager: delete_aurisys_lib_manager(), manager 0xb400007225464d90
+02-22 17:42:27.141  1095  1095 D AudioALSAPlaybackHandlerBase: closeWavDump()
+02-22 17:42:27.141  1095  1095 D AudioALSAPlaybackHandlerMixer: close(-)
+02-22 17:42:27.170  1435  1533 D AAL     : 02-22 05:42:27.087 BL= 714,ESS= 256, 02-22 05:42:27.104 BL= 713,ESS= 256, 02-22 05:42:27.120 BL= 712,ESS= 256, 02-22 05:42:27.153 BL= 711,ESS= 256, 02-22 05:42:27.170 BL= 710,ESS= 256, 
+02-22 17:42:27.178  1858  2618 D Hiber/appStateMachine: uid:10134 enter FrozenState
+02-22 17:42:27.194  1858  2618 D Hiber/cgroup: runningPids : [22011] for uid=10134 pkgName=com.android.chrome type=gms
+02-22 17:42:27.195  1858  2618 D Hiber/cgroup: writeDevFile pid: 22011
+02-22 17:42:27.195  1858  2618 I Hiber/sceneManager: freeze uid: 10134 com.android.chrome pids:[22011] costTime=17ms
+02-22 17:42:27.195  1858  2619 D Hiber/hiberManager: msg for start proxy frozen state
+02-22 17:42:27.195  1858  2619 D Hiber/hiberManager: try idle uid[10134] by hiber ,bgTime>0 ? false,isIdled before ? true ,isCurAllowListed ? false ,isProcStateBackground?true
+02-22 17:42:27.195  1858  2619 D Hiber/proxyManager: p_service: 10134
+02-22 17:42:27.195  1858  2619 D Hiber/proxyManager: p_job: 10134 pkgName=com.android.chrome
+02-22 17:42:27.195  1858  2618 D Hiber/appStateMachine: uid:10185 enter FrozenState
+02-22 17:42:27.196  1858  2619 D Hiber/proxyManager: pj_job: 10134 pkgName=com.android.chrome which=2
+02-22 17:42:27.197  1858  2618 D Hiber/cgroup: runningPids : [26697] for uid=10185 pkgName=com.google.android.youtube type=gms
+02-22 17:42:27.197  1858  2618 D Hiber/cgroup: writeDevFile pid: 26697
+02-22 17:42:27.198  1858  2618 I Hiber/sceneManager: freeze uid: 10185 com.google.android.youtube pids:[26697] costTime=2ms
+02-22 17:42:27.198  1858  2618 D Hiber/appStateMachine: uid:10237 enter FrozenState
+02-22 17:42:27.198  1858  2619 D Hiber/JobExtImpl: proxyJobs leave, uid=10134, pkg=com.android.chrome which=2
+02-22 17:42:27.198  1858  2619 D Hiber/hiberManager: proxy alarm (uid=10134, pkgName=com.android.chrome)
+02-22 17:42:27.198  1858  1858 V AlarmManager: set(null) : type=3 triggerAtTime=2098525752 win=30000 tElapsed=2098525752 maxElapsed=2098555752 interval=0 flags=0x8
+02-22 17:42:27.198  1858  2619 D Hiber/proxyManager: p_alarm: uid=10134, pkgName=com.android.chrome
+02-22 17:42:27.199  1858  2619 D Hiber/alarmManagerServiceExtImpl: proxyAlarms leave, uid=10134, packageName=com.android.chrome
+02-22 17:42:27.200  1858  2619 D Hiber/hiberManager: msg for start proxy frozen state
+02-22 17:42:27.200  1858  2619 D Hiber/hiberManager: try idle uid[10185] by hiber ,bgTime>0 ? true,isIdled before ? true ,isCurAllowListed ? false ,isProcStateBackground?true
+02-22 17:42:27.200  1858  2619 D Hiber/hiberManager: try idle uid[10185] by hiber
+02-22 17:42:27.200  1858  2619 D Hiber/proxyManager: p_service: 10185
+02-22 17:42:27.200  1858  2619 D Hiber/proxyManager: p_job: 10185 pkgName=com.google.android.youtube
+02-22 17:42:27.200  1858  2619 D Hiber/proxyManager: pj_job: 10185 pkgName=com.google.android.youtube which=2
+02-22 17:42:27.203  1858  2618 D Hiber/cgroup: runningPids : [12510] for uid=10237 pkgName=eu.livesport.FlashScore_com type=third
+02-22 17:42:27.204  1858  2618 D Hiber/cgroup: writeDevFile pid: 12510
+02-22 17:42:27.204  1858  2618 I Hiber/sceneManager: freeze uid: 10237 eu.livesport.FlashScore_com pids:[12510] costTime=6ms
+02-22 17:42:27.204  1858  2618 D Hiber/appStateMachine: uid:10243 enter FrozenState
+02-22 17:42:27.207  1858  2619 D Hiber/JobExtImpl: proxyJobs leave, uid=10185, pkg=com.google.android.youtube which=2
+02-22 17:42:27.207  1858  2619 D Hiber/hiberManager: proxy alarm (uid=10185, pkgName=com.google.android.youtube)
+02-22 17:42:27.207  1858  2619 D Hiber/proxyManager: p_alarm: uid=10185, pkgName=com.google.android.youtube
+02-22 17:42:27.207  1858  2619 D Hiber/alarmManagerServiceExtImpl: proxyAlarms leave, uid=10185, packageName=com.google.android.youtube
+02-22 17:42:27.207  1858  2619 D Hiber/hiberManager: msg for start proxy frozen state
+02-22 17:42:27.207  1858  2619 D Hiber/hiberManager: try idle uid[10237] by hiber ,bgTime>0 ? false,isIdled before ? false ,isCurAllowListed ? true ,isProcStateBackground?true
+02-22 17:42:27.207  1858  2619 D Hiber/proxyManager: p_service: 10237
+02-22 17:42:27.207  1858  2619 D Hiber/proxyManager: p_job: 10237 pkgName=eu.livesport.FlashScore_com
+02-22 17:42:27.208  1858  2619 D Hiber/proxyManager: pj_job: 10237 pkgName=eu.livesport.FlashScore_com which=2
+02-22 17:42:27.208  1858  2619 D Hiber/hiberManager: proxy alarm (uid=10237, pkgName=eu.livesport.FlashScore_com)
+02-22 17:42:27.208  1858  2619 D Hiber/proxyManager: p_alarm: uid=10237, pkgName=eu.livesport.FlashScore_com
+02-22 17:42:27.208  1858  2619 D Hiber/alarmManagerServiceExtImpl: proxyAlarms leave, uid=10237, packageName=eu.livesport.FlashScore_com
+02-22 17:42:27.212  1858  2618 D Hiber/cgroup: runningPids : [22981] for uid=10243 pkgName=com.truecaller type=third
+02-22 17:42:27.212  1858  2618 D Hiber/cgroup: writeDevFile pid: 22981
+02-22 17:42:27.212  1858  2618 I Hiber/sceneManager: freeze uid: 10243 com.truecaller pids:[22981] costTime=8ms
+02-22 17:42:27.212  1858  2618 D Hiber/restrictionPolicy: uid:10243  pkgName:com.truecaller isAllowedNet
+02-22 17:42:27.212  1858  2619 D Hiber/hiberManager: msg for start proxy frozen state
+02-22 17:42:27.212  1858  2621 I Hiber/nativeService: watch app network uid=10243, persistent=0
+02-22 17:42:27.212  1858  2619 D Hiber/hiberManager: try idle uid[10243] by hiber ,bgTime>0 ? true,isIdled before ? true ,isCurAllowListed ? false ,isProcStateBackground?true
+02-22 17:42:27.213  1858  2619 D Hiber/hiberManager: try idle uid[10243] by hiber
+02-22 17:42:27.213  1858  2618 D Hiber/appStateMachine: uid:10255 enter FrozenState
+02-22 17:42:27.213  1858  2619 D Hiber/proxyManager: p_service: 10243
+02-22 17:42:27.213  1858  2619 D Hiber/proxyManager: p_job: 10243 pkgName=com.truecaller
+02-22 17:42:27.213  1858  2619 D Hiber/proxyManager: pj_job: 10243 pkgName=com.truecaller which=2
+02-22 17:42:27.213  1858  2619 D Hiber/hiberManager: proxy alarm (uid=10243, pkgName=com.truecaller)
+02-22 17:42:27.213  1858  2619 D Hiber/proxyManager: p_alarm: uid=10243, pkgName=com.truecaller
+02-22 17:42:27.213  1858  2619 D Hiber/alarmManagerServiceExtImpl: proxyAlarms, alarm=Alarm{c733281 type 0 origWhen 1772569798724 whenElapsed 2867123200 com.truecaller}
+02-22 17:42:27.213  1858  2619 D Hiber/alarmManagerServiceExtImpl: proxyAlarms, alarm=Alarm{c8cfafd type 0 origWhen 1772731705813 whenElapsed 3029030289 com.truecaller}
+02-22 17:42:27.213  1858  2619 D Hiber/alarmManagerServiceExtImpl: proxyAlarms, alarm=Alarm{735ff26 type 0 origWhen 1772915398696 whenElapsed 3212723172 com.truecaller}
+02-22 17:42:27.213  1858  2619 D Hiber/alarmManagerServiceExtImpl: proxyAlarms leave, uid=10243, packageName=com.truecaller
+02-22 17:42:27.214  1858  2618 D Hiber/cgroup: runningPids : [27641, 2993] for uid=10255 pkgName=com.discord type=third
+02-22 17:42:27.214  1858  2618 D Hiber/cgroup: writeDevFile pid: 2993
+02-22 17:42:27.214  1858  2618 D Hiber/cgroup: writeDevFile pid: 27641
+02-22 17:42:27.214  1858  2618 I Hiber/sceneManager: freeze uid: 10255 com.discord pids:[2993, 27641] costTime=2ms
+02-22 17:42:27.215  1858  2618 D Hiber/restrictionPolicy: uid:10255  pkgName:com.discord isAllowedNet
+02-22 17:42:27.215  1858  2621 I Hiber/nativeService: watch app network uid=10255, persistent=0
+02-22 17:42:27.215  1858  2619 D Hiber/hiberManager: msg for start proxy frozen state
+02-22 17:42:27.215  1858  2619 D Hiber/hiberManager: try idle uid[10255] by hiber ,bgTime>0 ? true,isIdled before ? true ,isCurAllowListed ? false ,isProcStateBackground?true
+02-22 17:42:27.215  1858  2619 D Hiber/hiberManager: try idle uid[10255] by hiber
+02-22 17:42:27.215  1858  2618 D Hiber/appStateMachine: uid:10256 enter FrozenState
+02-22 17:42:27.215  1858  2619 D Hiber/proxyManager: p_service: 10255
+02-22 17:42:27.215  1858  2619 D Hiber/proxyManager: p_job: 10255 pkgName=com.discord
+02-22 17:42:27.215  1858  2619 D Hiber/proxyManager: pj_job: 10255 pkgName=com.discord which=2
+02-22 17:42:27.215  1858  2619 D Hiber/hiberManager: proxy alarm (uid=10255, pkgName=com.discord)
+02-22 17:42:27.215  1858  2619 D Hiber/proxyManager: p_alarm: uid=10255, pkgName=com.discord
+02-22 17:42:27.215  1858  2619 D Hiber/alarmManagerServiceExtImpl: proxyAlarms leave, uid=10255, packageName=com.discord
+02-22 17:42:27.218  1858  2618 D Hiber/cgroup: runningPids : [13093] for uid=10256 pkgName=com.linkedin.android type=third
+02-22 17:42:27.218  1858  2618 D Hiber/cgroup: writeDevFile pid: 13093
+02-22 17:42:27.219  1858  2618 I Hiber/sceneManager: freeze uid: 10256 com.linkedin.android pids:[13093] costTime=4ms
+02-22 17:42:27.219  1858  2619 D Hiber/hiberManager: msg for start proxy frozen state
+02-22 17:42:27.219  1858  2619 D Hiber/hiberManager: try idle uid[10256] by hiber ,bgTime>0 ? true,isIdled before ? true ,isCurAllowListed ? false ,isProcStateBackground?true
+02-22 17:42:27.219  1858  2618 D Hiber/appStateMachine: uid:10314 enter FrozenState
+02-22 17:42:27.219  1858  2619 D Hiber/hiberManager: try idle uid[10256] by hiber
+02-22 17:42:27.219  1858  2619 D Hiber/proxyManager: p_service: 10256
+02-22 17:42:27.219  1858  2619 D Hiber/proxyManager: p_job: 10256 pkgName=com.linkedin.android
+02-22 17:42:27.219  1858  2619 D Hiber/proxyManager: pj_job: 10256 pkgName=com.linkedin.android which=2
+02-22 17:42:27.223  1858  2619 D Hiber/JobExtImpl: proxyJobs leave, uid=10256, pkg=com.linkedin.android which=2
+02-22 17:42:27.223  1858  2619 D Hiber/hiberManager: proxy alarm (uid=10256, pkgName=com.linkedin.android)
+02-22 17:42:27.223  1858  2619 D Hiber/proxyManager: p_alarm: uid=10256, pkgName=com.linkedin.android
+02-22 17:42:27.223  1858  2619 D Hiber/alarmManagerServiceExtImpl: proxyAlarms leave, uid=10256, packageName=com.linkedin.android
+02-22 17:42:27.233  1858  2618 D Hiber/cgroup: runningPids : [24750] for uid=10314 pkgName=com.zhiliaoapp.musically type=third
+02-22 17:42:27.233  1858  2618 D Hiber/cgroup: writeDevFile pid: 24750
+02-22 17:42:27.234  1858  2618 I Hiber/sceneManager: freeze uid: 10314 com.zhiliaoapp.musically pids:[24750] costTime=15ms
+02-22 17:42:27.234  1858  2619 D Hiber/hiberManager: msg for start proxy frozen state
+02-22 17:42:27.234  1858  2619 D Hiber/hiberManager: try idle uid[10314] by hiber ,bgTime>0 ? true,isIdled before ? true ,isCurAllowListed ? false ,isProcStateBackground?true
+02-22 17:42:27.234  1858  2619 D Hiber/hiberManager: try idle uid[10314] by hiber
+02-22 17:42:27.235  1858  2619 D Hiber/proxyManager: p_service: 10314
+02-22 17:42:27.235  1858  2619 D Hiber/proxyManager: p_job: 10314 pkgName=com.zhiliaoapp.musically
+02-22 17:42:27.235  1858  2619 D Hiber/proxyManager: pj_job: 10314 pkgName=com.zhiliaoapp.musically which=2
+02-22 17:42:27.235  1858  2619 D Hiber/hiberManager: proxy alarm (uid=10314, pkgName=com.zhiliaoapp.musically)
+02-22 17:42:27.235  1858  2619 D Hiber/proxyManager: p_alarm: uid=10314, pkgName=com.zhiliaoapp.musically
+02-22 17:42:27.235  1858  2619 D Hiber/alarmManagerServiceExtImpl: proxyAlarms leave, uid=10314, packageName=com.zhiliaoapp.musically
+02-22 17:42:27.252  1435  1533 D AAL     : 02-22 05:42:27.186 BL= 709,ESS= 256, 02-22 05:42:27.203 BL= 708,ESS= 256, 02-22 05:42:27.219 BL= 707,ESS= 256, 02-22 05:42:27.236 BL= 706,ESS= 256, 02-22 05:42:27.252 BL= 705,ESS= 256, 
+02-22 17:42:27.335  1435  1533 D AAL     : 02-22 05:42:27.269 BL= 704,ESS= 256, 02-22 05:42:27.285 BL= 703,ESS= 256, 02-22 05:42:27.302 BL= 702,ESS= 256, 02-22 05:42:27.318 BL= 701,ESS= 256, 02-22 05:42:27.335 BL= 700,ESS= 256, 
+02-22 17:42:27.386  5618  5882 D BufferPoolAccessor2.0: evictor expired: 3, evicted: 0
+02-22 17:42:27.410 25529 26214 D welinkBLE: KolunScanHelper receive kolun scan result:null mCallbackList.size:1
+02-22 17:42:27.410 25529 26214 I welinkBLE: deviceInfo is null, continue scan......
+02-22 17:42:27.417  1435  1533 D AAL     : 02-22 05:42:27.351 BL= 699,ESS= 256, 02-22 05:42:27.368 BL= 698,ESS= 256, 02-22 05:42:27.384 BL= 697,ESS= 256, 02-22 05:42:27.401 BL= 696,ESS= 256, 02-22 05:42:27.417 BL= 695,ESS= 256, 
+02-22 17:42:27.468  1109 26771 W C2BqBuffer: last successful dequeue was 65590380346 us ago, 3000928 consecutive failures
+02-22 17:42:27.476  1858  3788 D ActivityManager: getProcessesInErrorState callingUid=10379, CallingPid=5618
+02-22 17:42:27.477  5618  5691 W MultiSignalANRDetectorLacrima: Pausing error state checks
+02-22 17:42:27.500  1435  1533 D AAL     : 02-22 05:42:27.434 BL= 694,ESS= 256, 02-22 05:42:27.450 BL= 693,ESS= 256, 02-22 05:42:27.467 BL= 692,ESS= 256, 02-22 05:42:27.483 BL= 691,ESS= 256, 02-22 05:42:27.500 BL= 690,ESS= 256, 
+02-22 17:42:27.513  1438  2106 D BufferPoolAccessor2.0: evictor expired: 3, evicted: 0
+02-22 17:42:27.583  1435  1533 D AAL     : 02-22 05:42:27.516 BL= 689,ESS= 256, 02-22 05:42:27.533 BL= 688,ESS= 256, 02-22 05:42:27.550 BL= 687,ESS= 256, 02-22 05:42:27.566 BL= 686,ESS= 256, 02-22 05:42:27.583 BL= 685,ESS= 256, 
+02-22 17:42:27.595  2625  2625 D TranCellSignalStrengthImpl: [LTE] dbm: -102
+02-22 17:42:27.595  2625  2625 D TranCellSignalStrengthImpl: [LTE] dbm: -102
+02-22 17:42:27.595  2625  2625 D TranCellSignalStrengthImpl: [LTE] dbm: -102
+02-22 17:42:27.596  1858  1858 I MWN     : onSignalStrengthsChanged...
+02-22 17:42:27.597  1858  1858 I MWN     : network type = 1
+02-22 17:42:27.597  1858  1858 I MWN     : Write 0 to node. type=Wi-Fi mSimExist=true mFlightMode=false
+02-22 17:42:27.598  1858  1926 D TranCellSignalStrengthImpl: [LTE] dbm: -102
+02-22 17:42:27.598  1858  1858 I MWN     : write the value:0 to node successfully.
+02-22 17:42:27.599  2625  2625 I TranPhoneSwitcher: mDefaultsign:3subid :1
+02-22 17:42:27.599  5618 15224 D TranCellSignalStrengthImpl: [LTE] dbm: -102
+02-22 17:42:27.623  2407  2487 D Dito    : mcc=605, mnc=02
+02-22 17:42:27.682  1435  1533 D AAL     : 02-22 05:42:27.616 BL= 684,ESS= 256, 02-22 05:42:27.632 BL= 683,ESS= 256, 02-22 05:42:27.649 BL= 682,ESS= 256, 02-22 05:42:27.665 BL= 681,ESS= 256, 02-22 05:42:27.682 BL= 680,ESS= 256, 
+02-22 17:42:27.726  2247  2247 I WifiHAL : Get link layer stats
+02-22 17:42:27.726  2247  2247 I WifiHAL : GetLinkStatsCommand::create
+02-22 17:42:27.726  2247  2247 D android.hardware.wifi@1.0-service-lazy: WifiRequest::create vendor command to iface 37, vendor_id=0x1a11, subcmd=0x1200, res=0
+02-22 17:42:27.726  2247  2247 I android.hardware.wifi@1.0-service-lazy: WifiCommand::requestResponse err=-14
+02-22 17:42:27.727  2247  2247 I WifiHAL : wifi_get_link_stats: result=-1
+02-22 17:42:27.727  1858  2113 E WifiVendorHal: getWifiLinkLayerStats_1_5_Internal(l.1176) failed {.code = ERROR_UNKNOWN, .description = unknown}
+02-22 17:42:27.764  1435  1533 D AAL     : 02-22 05:42:27.698 BL= 679,ESS= 256, 02-22 05:42:27.715 BL= 678,ESS= 256, 02-22 05:42:27.731 BL= 677,ESS= 256, 02-22 05:42:27.748 BL= 676,ESS= 256, 02-22 05:42:27.764 BL= 675,ESS= 256, 
+02-22 17:42:27.805  1120  1155 I libPerfCtl: xgfGetFPS pid:2407 fps:-1
+02-22 17:42:27.805  1120  1155 I libPerfCtl: xgfGetFPS pid:5618 fps:-1
+02-22 17:42:27.805  1120  1155 I libPerfCtl: xgfGetFPS pid:24748 fps:61
+02-22 17:42:27.805  1120  1155 I libPowerHal: [updateFPS] pid(24748) : -1 => 60
+02-22 17:42:27.805  1120  1173 I libPowerHal: [perfNotifyAppState] pack:com.pfeprojet, act:com.pfeprojet.MainActivity, state:5, pid:24748, uid:10388, fps:60
+02-22 17:42:27.806  1120  1173 I UxUtility: notifyForegroundApp pack:com.pfeprojet, uid:10388
+02-22 17:42:27.806  1120  1173 I TouchUtility: notifyAppState error = NULL
+02-22 17:42:27.806  1120  1155 I libPerfCtl: xgfGetFPS pid:24749 fps:-1
+02-22 17:42:27.847  1435  1533 D AAL     : 02-22 05:42:27.781 BL= 674,ESS= 256, 02-22 05:42:27.797 BL= 673,ESS= 256, 02-22 05:42:27.814 BL= 672,ESS= 256, 02-22 05:42:27.830 BL= 671,ESS= 256, 02-22 05:42:27.847 BL= 670,ESS= 256, 
+02-22 17:42:27.929  1435  1533 D AAL     : 02-22 05:42:27.863 BL= 669,ESS= 256, 02-22 05:42:27.880 BL= 668,ESS= 256, 02-22 05:42:27.896 BL= 667,ESS= 256, 02-22 05:42:27.913 BL= 666,ESS= 256, 02-22 05:42:27.929 BL= 665,ESS= 256, 
+02-22 17:42:28.012  1435  1533 D AAL     : 02-22 05:42:27.946 BL= 664,ESS= 256, 02-22 05:42:27.962 BL= 663,ESS= 256, 02-22 05:42:27.979 BL= 662,ESS= 256, 02-22 05:42:27.995 BL= 661,ESS= 256, 02-22 05:42:28.012 BL= 660,ESS= 256, 
+02-22 17:42:28.149 25529 26214 D welinkBLE: KolunScanHelper receive kolun scan result:null mCallbackList.size:1
+02-22 17:42:28.149 25529 26214 I welinkBLE: deviceInfo is null, continue scan......
+02-22 17:42:28.196  1858  2621 I Hiber/nativeService: check binder uid=10134
+02-22 17:42:28.198  1858  2621 I Hiber/nativeService: check binder uid=10185
+02-22 17:42:28.204  1858  2621 I Hiber/nativeService: check binder uid=10237
+02-22 17:42:28.212  1858  2621 I Hiber/nativeService: check binder uid=10243
+02-22 17:42:28.215  1858  2621 I Hiber/nativeService: check binder uid=10255
+02-22 17:42:28.219  1858  2621 I Hiber/nativeService: check binder uid=10256
+02-22 17:42:28.234  1858  2621 I Hiber/nativeService: check binder uid=10314
+02-22 17:42:28.236  1858  2620 D Hiber/cgroup: writeDevFile pid: 24750
+02-22 17:42:28.237  1858  2620 I Hiber/sceneManager: unfreeze uid: 10314 com.zhiliaoapp.musically pids:[24750]  reason:transBinder   cpninfo:FROZEN_TRANS_THREAD/1 costTime=1ms
+02-22 17:42:28.237  1858  2618 D Hiber/appStateMachine: uid=10314, pkg=com.zhiliaoapp.musically, transition from Frozen to Running, reason=transBinder
+02-22 17:42:28.237  1858  2618 D Hiber/appStateMachine: uid:10314 exit FrozenState
+02-22 17:42:28.238  1858  2619 D Hiber/proxyManager: up_service: 10314
+02-22 17:42:28.238  1858  2619 D Hiber/proxyManager: up_job: 10314
+02-22 17:42:28.238  1858  3408 D Hiber/proxyWakeLock: remove uid: 10314 wiht all pids from wakelockUidInfo list
+02-22 17:42:28.238  1858  2619 D Hiber/proxyManager: un_job: 10314
+02-22 17:42:28.238  1858  2619 D Hiber/alarmManagerServiceExtImpl: unproxyAlarms leave, uid=10314, packageName=null
+02-22 17:42:28.242  5618 15647 E FbnsAIDLClientManager: Max Try reached for binding to FbnsAIDLService, threadId 134717
+02-22 17:42:28.242  5618 15647 E FbnsAIDLClientManager: Fbns AIDL request got RemoteException
+02-22 17:42:28.242  5618 15647 E FbnsAIDLClientManager: android.os.RemoteException: AIDLService is not bound
+02-22 17:42:28.242  5618 15647 E FbnsAIDLClientManager: 	at X.3Ax.A00(Unknown Source:88)
+02-22 17:42:28.242  5618 15647 E FbnsAIDLClientManager: 	at X.9hz.call(Unknown Source:289)
+02-22 17:42:28.242  5618 15647 E FbnsAIDLClientManager: 	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+02-22 17:42:28.242  5618 15647 E FbnsAIDLClientManager: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1154)
+02-22 17:42:28.242  5618 15647 E FbnsAIDLClientManager: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:652)
+02-22 17:42:28.242  5618 15647 E FbnsAIDLClientManager: 	at java.lang.Thread.run(Thread.java:1563)
+02-22 17:42:28.673  1160  1326 D SurfaceFlinger: calculateTimeoutTime, triggerInterval = 1 sec + 199999769 nsec
+02-22 17:42:28.679  1435  2013 D AALLightSensor: oldLux=64 [SA:66 LA:64] newLux=64 (oriLux: 66)
+02-22 17:42:28.686  1160  1160 I BufferQueueProducer: [StatusBar#89](this:0xb4000078289b7f58,id:-1,api:0,p:-1,c:1160) queueBuffer: fps=0.50 dur=1997.86 max=1997.86 min=1997.86
+02-22 17:42:28.687  1104  1104 I hwcomposer: [HWCDisplay] [Display_0 (type:1)] fps:9.009102,dur:1997.98,max:1634.78,min:15.66  
+02-22 17:42:28.805  1120  1155 I libPerfCtl: xgfGetFPS pid:2407 fps:-1
+02-22 17:42:28.805  1120  1155 I libPerfCtl: xgfGetFPS pid:5618 fps:-1
+02-22 17:42:28.805  1120  1155 I libPerfCtl: xgfGetFPS pid:24748 fps:-1
+02-22 17:42:28.805  1120  1155 I libPowerHal: [updateFPS] pid(24748) : 60 => -1
+02-22 17:42:28.806  1120  1173 I libPowerHal: [perfNotifyAppState] pack:com.pfeprojet, act:com.pfeprojet.MainActivity, state:5, pid:24748, uid:10388, fps:-1
+02-22 17:42:28.806  1120  1173 I UxUtility: notifyForegroundApp pack:com.pfeprojet, uid:10388
+02-22 17:42:28.806  1120  1173 I TouchUtility: notifyAppState error = NULL
+02-22 17:42:28.806  1120  1155 I libPerfCtl: xgfGetFPS pid:24749 fps:-1
+02-22 17:42:28.870 24750 15875 I livestrategy: (VeLSPlatformDataFetcherJNI.cpp:105): PlatformDataFetcher:key:live_sdk_enable_data_warehouse, value:0
+02-22 17:42:28.871 24750 15875 I livestrategy: (DataWarehouse.cpp:79): DataWarehouseStoreToDB live_sdk_enable_data_warehouse=0
+02-22 17:42:29.039  1109 26771 D C2MtkBufferManager: over 5000ms not request from VCodec but callback hooked, slow BM Cc fetch thread
+02-22 17:42:29.100  5618  5820 W IgMetaConfig: Could not obtain MC: not_user_session session=X.24U@35c5683
+02-22 17:42:29.100  5618  5820 W IgMetaConfig: java.lang.RuntimeException: Could not obtain MC, call-site will receive default values
+02-22 17:42:29.100  5618  5820 W IgMetaConfig: 	at X.2cf.A06(:4)
+02-22 17:42:29.100  5618  5820 W IgMetaConfig: 	at X.2cf.A05(:8)
+02-22 17:42:29.100  5618  5820 W IgMetaConfig: 	at X.2cf.A02(:2)
+02-22 17:42:29.100  5618  5820 W IgMetaConfig: 	at X.2ec.A00(:8)
+02-22 17:42:29.100  5618  5820 W IgMetaConfig: 	at X.2ec.A03(:7)
+02-22 17:42:29.100  5618  5820 W IgMetaConfig: 	at X.6fi.A00(:6)
+02-22 17:42:29.100  5618  5820 W IgMetaConfig: 	at X.6gn.GIZ(:93)
+02-22 17:42:29.100  5618  5820 W IgMetaConfig: 	at X.6he.handleMessage(:82)
+02-22 17:42:29.100  5618  5820 W IgMetaConfig: 	at android.os.Handler.dispatchMessage(Handler.java:106)
+02-22 17:42:29.100  5618  5820 W IgMetaConfig: 	at android.os.Looper.loopOnce(Looper.java:204)
+02-22 17:42:29.100  5618  5820 W IgMetaConfig: 	at android.os.Looper.loop(Looper.java:291)
+02-22 17:42:29.100  5618  5820 W IgMetaConfig: 	at android.os.HandlerThread.run(HandlerThread.java:67)
+02-22 17:42:29.147  5618  5852 E AppStates.cpp: Event 2 is not expected in BACKGROUND_VOIPOFF
+02-22 17:42:29.156  5618  5618 W soft_error.cpp: [pando::graphql::PandoGraphQLRequestHybrid::assertValid] : Using a PandoGraphQLRequest after it has been consumed. Query name is SessionSurveyUriQuery
+02-22 17:42:29.210  1858  1882 I BaseFilesVerify: Base File verify start
+02-22 17:42:29.210  1858  1882 W BaseFilesVerify: jobs.xmlis not in fileProtect list,can not protect this file
+02-22 17:42:29.309  1407  1564 D ULogGuard: Monitoring: 16 threads, 0 requests, 0 time-bombs; 1 guards. ResetFlags = 0x7
+02-22 17:42:29.347  1858  2342 D Griffin/ResourceTracker: Cat meminfo coast time: 3ms
+02-22 17:42:29.645 25529 26214 D welinkBLE: KolunScanHelper receive kolun scan result:null mCallbackList.size:1
+02-22 17:42:29.646 25529 26214 I welinkBLE: deviceInfo is null, continue scan......
+02-22 17:42:29.738  2714  2714 E Athena  : ------------------------------------------------------------
+02-22 17:42:29.738  2714  2714 E Athena  : 
+02-22 17:42:29.738  2714  2714 E Athena  : Athena is in DEBUG or TEST mode, should not release this APK [com.transsion.multiwindow]
+02-22 17:42:29.738  2714  2714 E Athena  : 
+02-22 17:42:29.738  2714  2714 E Athena  : ------------------------------------------------------------
+02-22 17:42:29.749 25529 26214 D welinkBLE: KolunScanHelper receive kolun scan result:null mCallbackList.size:1
+02-22 17:42:29.749 25529 26214 I welinkBLE: deviceInfo is null, continue scan......
+02-22 17:42:29.805  1120  1155 I libPerfCtl: xgfGetFPS pid:2407 fps:-1
+02-22 17:42:29.805  1120  1155 I libPerfCtl: xgfGetFPS pid:5618 fps:-1
+02-22 17:42:29.805  1120  1155 I libPerfCtl: xgfGetFPS pid:24748 fps:-1
+02-22 17:42:29.805  1120  1155 I libPerfCtl: xgfGetFPS pid:24749 fps:-1
+02-22 17:42:30.040  5618 15668 W MobileModuleQPLObserver.cpp: Ignored unsupported key type: string
+02-22 17:42:30.056 29918  3636 I dzin    : (REDACTED) appOpsListener %s %s
+02-22 17:42:30.056 29918  3636 I dzin    : (REDACTED) Ignoring irrelevant audio permission changes for package %s
+02-22 17:42:30.146  5165  5580 I DataStorageManager: batchSaveRunnable  isBatchSaveRunning false
+02-22 17:42:30.146  5165 15685 I DataStorageManager: batchSave 5
+02-22 17:42:30.198  1858  3408 D Hiber/hiberManager: begin socketDestroy, mUid: 10134
+02-22 17:42:30.202  1858  3408 D TranNetworkManagementServiceLinkplusImpl: linkTurb destorySocketByUid  uid :10134
+02-22 17:42:30.202  1858  3408 D Hiber/hiberManager: clearDnsCache again!!!
+02-22 17:42:30.202  1858  3408 D Hiber/hiberManager: begin socketDestroy, mUid: 10185
+02-22 17:42:30.206  1858  3408 D TranNetworkManagementServiceLinkplusImpl: linkTurb destorySocketByUid  uid :10185
+02-22 17:42:30.206  1858  3408 D Hiber/hiberManager: clearDnsCache again!!!
+02-22 17:42:30.206  1858  3408 D Hiber/hiberManager: begin socketDestroy, mUid: 10237
+02-22 17:42:30.210  1858  3408 D TranNetworkManagementServiceLinkplusImpl: linkTurb destorySocketByUid  uid :10237
+02-22 17:42:30.210  1858  3408 D Hiber/hiberManager: clearDnsCache again!!!
+02-22 17:42:30.220  1858  3408 D Hiber/hiberManager: begin socketDestroy, mUid: 10256
+02-22 17:42:30.223  1858  3408 D TranNetworkManagementServiceLinkplusImpl: linkTurb destorySocketByUid  uid :10256
+02-22 17:42:30.223  1858  3408 D Hiber/hiberManager: clearDnsCache again!!!
+02-22 17:42:30.386  5618  5882 D BufferPoolAccessor2.0: bufferpool2 0xb4000074360bc3e8 : 0(0 size) total buffers - 0(0 size) used buffers - 1/6 (recycle/alloc) - 5/58 (fetch/transfer)
+02-22 17:42:30.387  5618  5882 D BufferPoolAccessor2.0: evictor expired: 1, evicted: 1
+02-22 17:42:30.513  1438  2106 D BufferPoolAccessor2.0: bufferpool2 0xb4000074f1490dd8 : 0(0 size) total buffers - 0(0 size) used buffers - 50/55 (recycle/alloc) - 5/55 (fetch/transfer)
+02-22 17:42:30.514  1438  2106 D BufferPoolAccessor2.0: evictor expired: 2, evicted: 1
+02-22 17:42:30.687  1160  1326 D SurfaceFlinger: calculateTimeoutTime, triggerInterval = 1 sec + 199999923 nsec
+02-22 17:42:30.700  1160  1160 I BufferQueueProducer: [StatusBar#89](this:0xb4000078289b7f58,id:-1,api:0,p:-1,c:1160) queueBuffer: fps=0.50 dur=2014.33 max=2014.33 min=2014.33
+02-22 17:42:30.702  1104  1104 I hwcomposer: [HWCDisplay] [Display_0 (type:1)] fps:0.496414,dur:2014.45,max:2014.45,min:2014.45  
+02-22 17:42:30.733  2247  2247 I WifiHAL : Get link layer stats
+02-22 17:42:30.733  2247  2247 I WifiHAL : GetLinkStatsCommand::create
+02-22 17:42:30.734  2247  2247 D android.hardware.wifi@1.0-service-lazy: WifiRequest::create vendor command to iface 37, vendor_id=0x1a11, subcmd=0x1200, res=0
+02-22 17:42:30.734  2247  2247 I android.hardware.wifi@1.0-service-lazy: WifiCommand::requestResponse err=-14
+02-22 17:42:30.734  2247  2247 I WifiHAL : wifi_get_link_stats: result=-1
+02-22 17:42:30.734  1858  2113 E WifiVendorHal: getWifiLinkLayerStats_1_5_Internal(l.1176) failed {.code = ERROR_UNKNOWN, .description = unknown}
+02-22 17:42:30.806  1120  1155 I libPerfCtl: xgfGetFPS pid:2407 fps:-1
+02-22 17:42:30.806  1120  1155 I libPerfCtl: xgfGetFPS pid:5618 fps:-1
+02-22 17:42:30.806  1120  1155 I libPerfCtl: xgfGetFPS pid:24748 fps:-1
+02-22 17:42:31.015 25529 26214 D welinkBLE: KolunScanHelper receive kolun scan result:null mCallbackList.size:1
+02-22 17:42:31.016 25529 26214 I welinkBLE: deviceInfo is null, continue scan......
+02-22 17:42:31.034  1120  1173 I mtkpower@impl: [powerd_req] TIMER_MSG_PERF_LOCK_TIMEOUT hdl:1269494
+02-22 17:42:31.043  1120  1132 D AppFlingMode: [CheckAppFlingHint] 25 com.pfeprojet -1
+02-22 17:42:31.044  1120  1156 E libPowerHal: [getCPUFreq] error cid:2, nClusterNum:2
+02-22 17:42:31.044 24748 24748 D os.LiceInfo: instance successfully. com.transsion.message.bank.v1.MessageBankLice@f5e11f1 from com.transsion.message.bank.IMessageBankLice
+02-22 17:42:31.045  1858  3001 D ParticularFeatureManager: enforcePermission,  do hasFeature
+02-22 17:42:31.046  1858  3001 D ParticularFeatureManager: enforcePermission, com.pfeprojet do getFeature
+02-22 17:42:31.053 24748 24748 D TranClassInfo: instance successfully. com.transsion.hubcore.internal.policy.TranDecorViewImpl@ad376f3 from com.transsion.hubcore.internal.policy.ITranDecorView
+02-22 17:42:31.097  1160  1160 I BufferQueueProducer: [com.pfeprojet/com.pfeprojet.MainActivity#403113](this:0xb400007828ce6638,id:-1,api:0,p:-1,c:1160) queueBuffer: fps=3.94 dur=4310.49 max=4046.09 min=15.74
+02-22 17:42:31.118 25529 26214 D welinkBLE: KolunScanHelper receive kolun scan result:null mCallbackList.size:1
+02-22 17:42:31.118 25529 26214 I welinkBLE: deviceInfo is null, continue scan......
+02-22 17:42:31.141  1120  1173 I libPowerHal: [PD] MTKPOWER_HINT_APP_TOUCH update cmd:3408b00 param:0
+02-22 17:42:31.143  1858  3001 D CoreBackPreview: Window{6ec5b91 u0 com.pfeprojet/com.pfeprojet.MainActivity}: Setting back callback null
+02-22 17:42:31.146 24748 24748 D View    : [Warning] assignParent to null: this = DecorView@e88b5ae[MainActivity]
+02-22 17:42:31.147  1858  3001 W InputManager-JNI: Input channel object '6ec5b91 com.pfeprojet/com.pfeprojet.MainActivity (client)' was disposed without first being removed with the input manager!
+02-22 17:42:31.147  1858  3001 I WindowManager:   isAnimating=false  okToAnimate=true  win=Window{6ec5b91 u0 com.pfeprojet/com.pfeprojet.MainActivity}
+02-22 17:42:31.149  1858  3001 E WindowManager: isFocusOnThunderbackWindow false mFocusMultiWindowId: 11 newFocus: 0 thunderback: false
+02-22 17:42:31.150 24748 15773 D BLASTBufferQueue: [VRI[MainActivity]#1](f:0,a:4) destructor()
+02-22 17:42:31.151 24748 15773 D BufferQueueConsumer: [VRI[MainActivity]#1(BLAST Consumer)1](id:60ac00000001,api:0,p:-1,c:24748) disconnect
+02-22 17:42:31.151  1858  3001 W WindowManager: Changing focus from Window{6ec5b91 u0 com.pfeprojet/com.pfeprojet.MainActivity EXITING} to Window{5e35996 u0 com.pfeprojet/com.pfeprojet.MainActivity} displayId=0 Callers=com.android.server.wm.RootWindowContainer.updateFocusedWindowLocked:524 com.android.server.wm.WindowManagerService.updateFocusedWindowLocked:6384 com.android.server.wm.WindowState.setupWindowForRemoveOnExit:2925 com.android.server.wm.WindowState.removeIfPossible:2893 
+02-22 17:42:31.158  1858  3001 I WindowManager: DisplayContent w: Window{5e35996 u0 com.pfeprojet/com.pfeprojet.MainActivity} Apply preferredModeId = 3
+02-22 17:42:31.163  1858  1884 I WindowManager: DisplayContent w: Window{5e35996 u0 com.pfeprojet/com.pfeprojet.MainActivity} Apply preferredModeId = 3
+02-22 17:42:31.163 24748 24748 D InputTransport: Destroy ARC handle: 0xb400007375260be0
+02-22 17:42:31.165  1858  1885 I mtkpower_client: perf_cus_lock_hint hint:101, dur:200
+02-22 17:42:31.165  1120  1132 D AppFlingMode: [CheckAppFlingHint] 101 com.pfeprojet -1
+02-22 17:42:31.166  1858  1884 I mtkpower_client: perf_cus_lock_hint hint:103, dur:1000
+02-22 17:42:31.166  1858  1885 I mtkpower_client: perf_cus_lock_hint, ret_hdl:1269501
+02-22 17:42:31.167  1120  1132 D AppFlingMode: [CheckAppFlingHint] 103 com.pfeprojet -1
+02-22 17:42:31.167  1858  1884 I mtkpower_client: perf_cus_lock_hint, ret_hdl:0
+02-22 17:42:31.169  1104  1104 I hwcomposer: [HWC] (0) displaySetActiveConfig config:0  
+02-22 17:42:31.171  1858  1883 V WindowManager: Unknown focus tokens, dropping reportFocusChanged
+02-22 17:42:31.176  1160  1211 D SurfaceFlinger: [SF client] NEW(0xb400007738877730) for (24748:com.pfeprojet)
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: Unable to download JS bundle
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: com.facebook.react.common.DebugServerException: Could not connect to development server.
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: 
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: Try the following to fix the issue:
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: ÔÇó Ensure that Metro is running
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: ÔÇó Ensure that your device/emulator is connected to your machine and has USB debugging enabled - run 'adb devices' to see a list of connected devices
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: ÔÇó Ensure Airplane Mode is disabled
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: ÔÇó If you're on a physical device connected to the same machine, run 'adb reverse tcp:8081 tcp:8081' to forward requests from your device
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: ÔÇó If your device is on the same Wi-Fi network, set 'Debug server host & port for device' in 'Dev settings' to your machine's IP address and the port of the local dev server - e.g. 10.0.1.1:8081
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: 
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: URL: http://localhost:8081/index.bundle?platform=android&dev=true&lazy=true&minify=false&app=com.pfeprojet&modulesOnly=false&runModule=true
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: 	at com.facebook.react.devsupport.BundleDownloader$1.onFailure(BundleDownloader.java:126)
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: 	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:525)
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1154)
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:652)
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: 	at java.lang.Thread.run(Thread.java:1563)
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: Caused by: java.net.ConnectException: Failed to connect to localhost/127.0.0.1:8081
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: 	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.kt:297)
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: 	at okhttp3.internal.connection.RealConnection.connect(RealConnection.kt:207)
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: 	at okhttp3.internal.connection.ExchangeFinder.findConnection(ExchangeFinder.kt:226)
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: 	at okhttp3.internal.connection.ExchangeFinder.findHealthyConnection(ExchangeFinder.kt:106)
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: 	at okhttp3.internal.connection.ExchangeFinder.find(ExchangeFinder.kt:74)
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: 	at okhttp3.internal.connection.RealCall.initExchange$okhttp(RealCall.kt:255)
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: 	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.kt:32)
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: 	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: 	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.kt:95)
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: 	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: 	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.kt:83)
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: 	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: 	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.kt:76)
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: 	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: 	at okhttp3.internal.connection.RealCall.getResponseWithInterceptorChain$okhttp(RealCall.kt:201)
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: 	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:517)
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: 	... 3 more
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: Caused by: java.net.ConnectException: failed to connect to localhost/127.0.0.1 (port 8081) from /127.0.0.1 (port 42284) after 5000ms: isConnected failed: ECONNREFUSED (Connection refused)
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: 	at libcore.io.IoBridge.isConnected(IoBridge.java:347)
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: 	at libcore.io.IoBridge.connectErrno(IoBridge.java:237)
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: 	at libcore.io.IoBridge.connect(IoBridge.java:179)
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: 	at java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:142)
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: 	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:390)
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: 	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:230)
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: 	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:212)
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: 	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:436)
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: 	at java.net.Socket.connect(Socket.java:646)
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: 	at okhttp3.internal.platform.Platform.connectSocket(Platform.kt:128)
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: 	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.kt:295)
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: 	... 18 more
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: Caused by: android.system.ErrnoException: isConnected failed: ECONNREFUSED (Connection refused)
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: 	at libcore.io.IoBridge.isConnected(IoBridge.java:334)
+02-22 17:42:31.178 24748 15796 E unknown:ReactNative: 	... 28 more
+02-22 17:42:31.178 24748 24748 D VRI[PopupWindow:65df4c8]: hardware acceleration = true, forceHwAccelerated = false
+02-22 17:42:31.181  1858  1883 I DisplayDeviceRepository: Display device changed: DisplayDeviceInfo{"Built-in Screen": uniqueId="local:0", 1080 x 2460, modeId 1, defaultModeId 1, supportedModes [{id=1, width=1080, height=2460, fps=120.00001, alternativeRefreshRates=[60.0, 90.0]}, {id=2, width=1080, height=2460, fps=90.0, alternativeRefreshRates=[60.0, 120.00001]}, {id=3, width=1080, height=2460, fps=60.0, alternativeRefreshRates=[90.0, 120.00001]}], colorMode 0, supportedColorModes [0], hdrCapabilities HdrCapabilities{mSupportedHdrTypes=[], mMaxLuminance=500.0, mMaxAverageLuminance=500.0, mMinLuminance=0.0}, allmSupported false, gameContentTypeSupported false, density 480, 396.565 x 396.565 dpi, appVsyncOff 2399998, presDeadline 11933334, cutout DisplayCutout{insets=Rect(0, 108 - 0, 0) waterfall=Insets{left=0, top=0, right=0, bottom=0} boundingRect={Bounds=[Rect(0, 0 - 0, 0), Rect(468, 0 - 612, 108), Rect(0, 0 - 0, 0), Rect(0, 0 - 0, 0)]} cutoutPathParserInfo={CutoutPathParserInfo{displayWidth=1080 displayHeight=2460 physicalDisplayWidth=1080 physicalDisplayHeight=2460 density={3.0} cutoutSpec={M -24,0 L -24,36 L 24,36 L 24,0 Z @dp} rotation={0} scale={1.0} physicalPixelDisplaySizeRatio={1.0}}}}, touch INTERNAL, rotation 0, type INTERNAL, address {port=0}, deviceProductInfo null, state ON, frameRateOverride , brightnessMinimum 0.0, brightnessMaximum 1.0, brightnessDefault 0.4, roundedCorners RoundedCorners{[RoundedCorner{position=TopLeft, radius=78, center=Point(78, 78)}, RoundedCorner{position=TopRight, radius=78, center=Point(1002, 78)}, RoundedCorner{position=BottomRight, radius=78, center=Point(1002, 2382)}, RoundedCorner{position=BottomLeft, radius=78, center=Point(78, 2382)}]}, FLAG_ALLOWED_TO_BE_DEFAULT_DISPLAY, FLAG_ROTATES_WITH_CONTENT, FLAG_SECURE, FLAG_SUPPORTS_PROTECTED_BUFFERS, installOrientation 0}
+02-22 17:42:31.182 20814 20814 V WarningView: isHomeActive, return
+02-22 17:42:31.182 20814 20814 V WarningView: isHomeActive, return
+02-22 17:42:31.182  1858  1883 D Griffin/DeviceState: virtualDisplayPackageName :{}
+02-22 17:42:31.185  1858  1884 I WindowManager: DisplayContent w: Window{5e35996 u0 com.pfeprojet/com.pfeprojet.MainActivity} Apply preferredModeId = 3
+02-22 17:42:31.187  1858  1884 I WindowManager: DisplayContent w: Window{5e35996 u0 com.pfeprojet/com.pfeprojet.MainActivity} Apply preferredModeId = 3
+02-22 17:42:31.188 24748 24748 D InputTransport: Create ARC handle: 0xb400007375264d80
+02-22 17:42:31.189  1858  2765 D CoreBackPreview: Window{ef605ee u0 PopupWindow:65df4c8}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@94092fa, mPriority=0}
+02-22 17:42:31.193 24748 24748 D View    : [Warning] assignParent to null: this = android.widget.PopupWindow$PopupDecorView{8ae2a9d V.E...... R.....I. 0,0-0,0}
+02-22 17:42:31.194  1858  1998 D CoreBackPreview: Window{ef605ee u0 PopupWindow:65df4c8}: Setting back callback null
+02-22 17:42:31.194  1858  4443 W InputManager-JNI: Input channel object 'ef605ee PopupWindow:65df4c8 (client)' was disposed without first being removed with the input manager!
+02-22 17:42:31.195  1858  4443 D WindowManager: setParent old=Window{5e35996 u0 com.pfeprojet/com.pfeprojet.MainActivity},new=null,this window=Window{ef605ee u0 PopupWindow:65df4c8},callers=com.android.server.wm.WindowContainer.removeChild:850 com.android.server.wm.WindowContainer.removeImmediately:906 com.android.server.wm.WindowState.removeImmediately:2687 com.android.server.wm.WindowState.removeIfPossible:2901 com.android.server.wm.WindowState.removeIfPossible:2738 com.android.server.wm.WindowManagerService.removeWindow:2201 
+02-22 17:42:31.197  1858  4443 I WindowManager: DisplayContent w: Window{5e35996 u0 com.pfeprojet/com.pfeprojet.MainActivity} Apply preferredModeId = 3
+02-22 17:42:31.200 24748 24748 D InputTransport: Destroy ARC handle: 0xb400007375264d80
+02-22 17:42:31.201  1858  1884 I WindowManager: DisplayContent w: Window{5e35996 u0 com.pfeprojet/com.pfeprojet.MainActivity} Apply preferredModeId = 3
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: Exception in native call
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: com.facebook.react.common.DebugServerException: Could not connect to development server.
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: 
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: Try the following to fix the issue:
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: ÔÇó Ensure that Metro is running
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: ÔÇó Ensure that your device/emulator is connected to your machine and has USB debugging enabled - run 'adb devices' to see a list of connected devices
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: ÔÇó Ensure Airplane Mode is disabled
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: ÔÇó If you're on a physical device connected to the same machine, run 'adb reverse tcp:8081 tcp:8081' to forward requests from your device
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: ÔÇó If your device is on the same Wi-Fi network, set 'Debug server host & port for device' in 'Dev settings' to your machine's IP address and the port of the local dev server - e.g. 10.0.1.1:8081
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: 
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: URL: http://localhost:8081/index.bundle?platform=android&dev=true&lazy=true&minify=false&app=com.pfeprojet&modulesOnly=false&runModule=true
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: 	at com.facebook.react.devsupport.BundleDownloader$1.onFailure(BundleDownloader.java:126)
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: 	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:525)
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1154)
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:652)
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: 	at java.lang.Thread.run(Thread.java:1563)
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: Caused by: java.net.ConnectException: Failed to connect to localhost/127.0.0.1:8081
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: 	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.kt:297)
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: 	at okhttp3.internal.connection.RealConnection.connect(RealConnection.kt:207)
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: 	at okhttp3.internal.connection.ExchangeFinder.findConnection(ExchangeFinder.kt:226)
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: 	at okhttp3.internal.connection.ExchangeFinder.findHealthyConnection(ExchangeFinder.kt:106)
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: 	at okhttp3.internal.connection.ExchangeFinder.find(ExchangeFinder.kt:74)
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: 	at okhttp3.internal.connection.RealCall.initExchange$okhttp(RealCall.kt:255)
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: 	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.kt:32)
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: 	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: 	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.kt:95)
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: 	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: 	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.kt:83)
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: 	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: 	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.kt:76)
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: 	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: 	at okhttp3.internal.connection.RealCall.getResponseWithInterceptorChain$okhttp(RealCall.kt:201)
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: 	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:517)
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: 	... 3 more
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: Caused by: java.net.ConnectException: failed to connect to localhost/127.0.0.1 (port 8081) from /127.0.0.1 (port 42284) after 5000ms: isConnected failed: ECONNREFUSED (Connection refused)
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: 	at libcore.io.IoBridge.isConnected(IoBridge.java:347)
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: 	at libcore.io.IoBridge.connectErrno(IoBridge.java:237)
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: 	at libcore.io.IoBridge.connect(IoBridge.java:179)
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: 	at java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:142)
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: 	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:390)
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: 	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:230)
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: 	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:212)
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: 	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:436)
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: 	at java.net.Socket.connect(Socket.java:646)
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: 	at okhttp3.internal.platform.Platform.connectSocket(Platform.kt:128)
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: 	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.kt:295)
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: 	... 18 more
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: Caused by: android.system.ErrnoException: isConnected failed: ECONNREFUSED (Connection refused)
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: 	at libcore.io.IoBridge.isConnected(IoBridge.java:334)
+02-22 17:42:31.201 24748 24748 E unknown:ReactNative: 	... 28 more
+02-22 17:42:31.203  1858  4443 D TranWindowManagerService: hookIMEVisibleChanged(), show:false
+02-22 17:42:31.203  1858  4443 I FloatWindow: hookInputMethodShown inputShown: false
+02-22 17:42:31.203  1858  4443 I TranSourceConnectManagerImpl: hookInputMethodShown inputShown: false
+02-22 17:42:31.203  1858  4443 I input_debug: package: com.pfeprojet isPassWordInput: false inputType: 0 mMethodMap: true isKeyguardShowing: false enable: 0 isSplitScreen: false
+02-22 17:42:31.205 11579 11579 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2113 
+02-22 17:42:31.205  1858  4443 V TranSecureKeyboardManagerImpl: getServiceLocked mInputMethodService = null this: com.transsion.hubcore.sk.TranSecureKeyboardManagerImpl@eb132e
+02-22 17:42:31.205 11579 11579 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():103 repeatCheckTimes = 0, locked = false
+02-22 17:42:31.206 11579 11579 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1384 onStartInput(EditorInfo{EditorInfo{packageName=com.pfeprojet, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=-1, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+02-22 17:42:31.206 11579 11579 I AndroidIME: LatinIMEBase.updateInputViewCoverNavigation():314 Update input view padding, extendsTouchBelowSpace=false, bottom inset=120
+02-22 17:42:31.207 11579 11579 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():103 repeatCheckTimes = 1, locked = false
+02-22 17:42:31.209  1858  1884 I WindowManager: DisplayContent w: Window{5e35996 u0 com.pfeprojet/com.pfeprojet.MainActivity} Apply preferredModeId = 3
+02-22 17:42:31.214 24748 24748 D os.SingleLiceFactory: using com.android.internal.IInternalViewLice$DefaultImpl@e3d8922 instead of com.transsion.activityembedding.ActivityEmbeddingLiceFactory  from com.android.internal.IInternalViewLice
+02-22 17:42:31.214 24748 24748 D os.SingleLiceFactory: using com.android.internal.IInternalViewLice$DefaultImpl@e3d8922 instead of com.transsion.activityembedding.ActivityEmbeddingLiceFactory  from com.android.internal.IInternalViewLice
+02-22 17:42:31.214 24748 24748 D os.SingleLiceFactory: using com.android.internal.IInternalViewLice$DefaultImpl@e3d8922 instead of com.transsion.activityembedding.ActivityEmbeddingLiceFactory  from com.android.internal.IInternalViewLice
+02-22 17:42:31.214 24748 24748 D os.SingleLiceFactory: using com.android.internal.IInternalViewLice$DefaultImpl@e3d8922 instead of com.transsion.activityembedding.ActivityEmbeddingLiceFactory  from com.android.internal.IInternalViewLice
+02-22 17:42:31.214 24748 24748 D os.SingleLiceFactory: using com.android.internal.IInternalViewLice$DefaultImpl@e3d8922 instead of com.transsion.activityembedding.ActivityEmbeddingLiceFactory  from com.android.internal.IInternalViewLice
+02-22 17:42:31.214 24748 24748 D os.SingleLiceFactory: using com.android.internal.IInternalViewLice$DefaultImpl@e3d8922 instead of com.transsion.activityembedding.ActivityEmbeddingLiceFactory  from com.android.internal.IInternalViewLice
+02-22 17:42:31.215 24748 24748 D os.SingleLiceFactory: using com.android.internal.IInternalViewLice$DefaultImpl@e3d8922 instead of com.transsion.activityembedding.ActivityEmbeddingLiceFactory  from com.android.internal.IInternalViewLice
+02-22 17:42:31.215 24748 24748 D os.SingleLiceFactory: using com.android.internal.IInternalViewLice$DefaultImpl@e3d8922 instead of com.transsion.activityembedding.ActivityEmbeddingLiceFactory  from com.android.internal.IInternalViewLice
+02-22 17:42:31.216  1160  1293 W VSyncPredictor: VSyncPredictor::setPeriod current period =8333333
+02-22 17:42:31.216  1160  3327 D SurfaceFlinger: [SF client] NEW(0xb400007738869570) for (24748:com.pfeprojet)
+02-22 17:42:31.218 24748 24748 D VRI[MainActivity]: hardware acceleration = true, forceHwAccelerated = false
+02-22 17:42:31.222  1858  4443 E WindowManager: isFocusOnThunderbackWindow false mFocusMultiWindowId: 11 newFocus: 0 thunderback: false
+02-22 17:42:31.222  1858  4443 W WindowManager: Changing focus from Window{5e35996 u0 com.pfeprojet/com.pfeprojet.MainActivity} to Window{b907b4 u0 com.pfeprojet/com.pfeprojet.MainActivity} displayId=0 Callers=com.android.server.wm.RootWindowContainer.updateFocusedWindowLocked:524 com.android.server.wm.WindowManagerService.updateFocusedWindowLocked:6384 com.android.server.wm.WindowManagerService.addWindow:2001 com.android.server.wm.Session.addToDisplayAsUser:215 
+02-22 17:42:31.231 24748 24748 D InputTransport: Create ARC handle: 0xb4000073752620b0
+02-22 17:42:31.231  1858  4443 D CoreBackPreview: Window{b907b4 u0 com.pfeprojet/com.pfeprojet.MainActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@265c69e, mPriority=0}
+02-22 17:42:31.235 24748 24748 D os.SingleLiceFactory: using com.android.internal.IInternalViewLice$DefaultImpl@e3d8922 instead of com.transsion.activityembedding.ActivityEmbeddingLiceFactory  from com.android.internal.IInternalViewLice
+02-22 17:42:31.235 24748 24748 D os.SingleLiceFactory: using com.android.internal.IInternalViewLice$DefaultImpl@e3d8922 instead of com.transsion.activityembedding.ActivityEmbeddingLiceFactory  from com.android.internal.IInternalViewLice
+02-22 17:42:31.236 24748 24748 D os.SingleLiceFactory: using com.android.internal.IInternalViewLice$DefaultImpl@e3d8922 instead of com.transsion.activityembedding.ActivityEmbeddingLiceFactory  from com.android.internal.IInternalViewLice
+02-22 17:42:31.236 24748 24748 D os.SingleLiceFactory: using com.android.internal.IInternalViewLice$DefaultImpl@e3d8922 instead of com.transsion.activityembedding.ActivityEmbeddingLiceFactory  from com.android.internal.IInternalViewLice
+02-22 17:42:31.233  1858  1858 W binder:1858_16: type=1400 audit(0.0:2410492): avc: denied { read } for name="u:object_r:vendor_default_prop:s0" dev="tmpfs" ino=474 scontext=u:r:system_server:s0 tcontext=u:object_r:vendor_default_prop:s0 tclass=file permissive=0
+02-22 17:42:31.237  1858  4443 W libc    : Access denied finding property "ro.vendor.tgpa_resolution_tuner"
+02-22 17:42:31.238  1160  1609 I BufferQueueDebug: [com.pfeprojet/com.pfeprojet.MainActivity#403125](this:0xb400007828ab83f8,id:-1,api:0,p:-1,c:-1) BufferQueue core=(1160:/system/bin/surfaceflinger)
+02-22 17:42:31.240  1858  4443 I WindowManager: DisplayContent w: Window{5e35996 u0 com.pfeprojet/com.pfeprojet.MainActivity} Apply preferredModeId = 3
+02-22 17:42:31.245  1120  1173 I mtkpower@impl: [powerd_req] TIMER_MSG_PERF_LOCK_TIMEOUT hdl:1269500
+02-22 17:42:31.245  1120  1173 I libPowerHal: [PD] mtkpower@1.0-se update cmd:1408300 param:40
+02-22 17:42:31.245 24748 24748 D BufferQueueConsumer: [](id:60ac00000002,api:0,p:-1,c:24748) connect: controlledByApp=false
+02-22 17:42:31.246 24748 24748 I config_debug: updateDecorCaptionStatus: {1.0 605mcc2mnc [en_US,fr_FR] ldltr sw360dp w360dp h744dp 480dpi nrml long port night finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 1080, 2460) mAppBounds=Rect(0, 108 - 1080, 2340) mMaxBounds=Rect(0, 0 - 1080, 2460) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mMultiWindowMode=normal mMultiWindowId=0 mWindowResiable=6 mInLargeScreen=-1 mActivityType=standard mAlwaysOnTop=undefined mRotation=ROTATION_0 mDisplayUniqueId=0} as.15 s.1 fontWeightAdjustment=0} fromMultiWindow: true
+02-22 17:42:31.274  1435  1533 D AAL     : 02-22 05:42:31.241 BL= 661,ESS= 256, 02-22 05:42:31.250 BL= 662,ESS= 256, 02-22 05:42:31.257 BL= 663,ESS= 256, 02-22 05:42:31.266 BL= 664,ESS= 256, 02-22 05:42:31.274 BL= 665,ESS= 256, 
+02-22 17:42:31.277 24748 15780 D BLASTBufferQueue: [VRI[MainActivity]#2](f:0,a:1) acquireNextBufferLocked size=1080x2460 mFrameNumber=1 applyTransaction=true mTimestamp=991973979843049(auto) mPendingTransactions.size=0 graphicBufferId=106291850641428 transform=0
+02-22 17:42:31.278 24748 15780 W Parcel  : Expecting binder but got null!
+02-22 17:42:31.279  1160  1160 D BufferStateLayer: com.pfeprojet/com.pfeprojet.MainActivity#403125 setBuffer frameId=1, bufferId=106291850641428 fenceId=447, w= 1080, h=2460
+02-22 17:42:31.280  1858  1884 I WindowManager: DisplayContent w: Window{5e35996 u0 com.pfeprojet/com.pfeprojet.MainActivity} Apply preferredModeId = 3
+02-22 17:42:31.280  1160  1218 E surfaceflinger: == MALI DEBUG ===eglp_winsys_populate_image_templates ==12288
+02-22 17:42:31.284  1858  1884 I WindowManager: DisplayContent w: Window{b907b4 u0 com.pfeprojet/com.pfeprojet.MainActivity} Apply preferredModeId = 3
+02-22 17:42:31.284  1858  1884 I WindowManager:   isAnimating=false  okToAnimate=true  win=Window{b907b4 u0 com.pfeprojet/com.pfeprojet.MainActivity}
+02-22 17:42:31.287  1858  1885 I mtkpower_client: perf_cus_lock_hint hint:101, dur:200
+02-22 17:42:31.287  1120  1132 D AppFlingMode: [CheckAppFlingHint] 101 com.pfeprojet -1
+02-22 17:42:31.288  1858  1885 I mtkpower_client: perf_cus_lock_hint, ret_hdl:1269502
+02-22 17:42:31.288  1160  1218 E surfaceflinger: == MALI DEBUG ===eglp_winsys_populate_image_templates ==12288
+02-22 17:42:31.291  1858  1884 I WindowManager: DisplayContent w: Window{5e35996 u0 com.pfeprojet/com.pfeprojet.MainActivity} Apply preferredModeId = 3
+02-22 17:42:31.307  1858  4443 D TranWindowManagerService: hookIMEVisibleChanged(), show:false
+02-22 17:42:31.307  1858  4443 I FloatWindow: hookInputMethodShown inputShown: false
+02-22 17:42:31.307  1858  4443 I TranSourceConnectManagerImpl: hookInputMethodShown inputShown: false
+02-22 17:42:31.307  1858  4443 I input_debug: package: com.pfeprojet isPassWordInput: false inputType: 0 mMethodMap: true isKeyguardShowing: false enable: 0 isSplitScreen: false
+02-22 17:42:31.308 11579 11579 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2113 
+02-22 17:42:31.308  1858  4443 V TranSecureKeyboardManagerImpl: getServiceLocked mInputMethodService = null this: com.transsion.hubcore.sk.TranSecureKeyboardManagerImpl@eb132e
+02-22 17:42:31.310 11579 11579 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():103 repeatCheckTimes = 0, locked = false
+02-22 17:42:31.311 11579 11579 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1384 onStartInput(EditorInfo{EditorInfo{packageName=com.pfeprojet, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=-1, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+02-22 17:42:31.311 11579 11579 I AndroidIME: LatinIMEBase.updateInputViewCoverNavigation():314 Update input view padding, extendsTouchBelowSpace=false, bottom inset=120
+02-22 17:42:31.312  1858  1884 I WindowManager: DisplayContent w: Window{5e35996 u0 com.pfeprojet/com.pfeprojet.MainActivity} Apply preferredModeId = 3
+02-22 17:42:31.312 11579 11579 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():103 repeatCheckTimes = 1, locked = false
+02-22 17:42:31.315  1435  1533 D AAL     : 02-22 05:42:31.282 BL= 666,ESS= 256, 02-22 05:42:31.291 BL= 667,ESS= 256, 02-22 05:42:31.298 BL= 668,ESS= 256, 02-22 05:42:31.307 BL= 669,ESS= 256, 02-22 05:42:31.315 BL= 670,ESS= 256, 
+02-22 17:42:31.329  1160  1218 E surfaceflinger: == MALI DEBUG ===eglp_winsys_populate_image_templates ==12288
+02-22 17:42:31.354  2714  2754 I tmw_    : notifyInputMethodShow: false mFocusOnMultiDisplay: false
+02-22 17:42:31.365  1435  1533 D AAL     : 02-22 05:42:31.323 BL= 671,ESS= 256, 02-22 05:42:31.340 BL= 672,ESS= 256, 02-22 05:42:31.348 BL= 673,ESS= 256, 02-22 05:42:31.356 BL= 674,ESS= 256, 02-22 05:42:31.365 BL= 675,ESS= 256, 
+02-22 17:42:31.366  1120  1173 I mtkpower@impl: [powerd_req] TIMER_MSG_PERF_LOCK_TIMEOUT hdl:1269501
+02-22 17:42:31.371  1858  1884 D WindowManager: setParent old=ActivityRecord{853c75 u0 com.pfeprojet/.MainActivity} t58690},new=null,this window=Window{6ec5b91 u0 com.pfeprojet/com.pfeprojet.MainActivity},callers=com.android.server.wm.WindowContainer.removeChild:850 com.android.server.wm.ActivityRecord.removeChild:4675 com.android.server.wm.ActivityRecord.removeChild:447 com.android.server.wm.WindowContainer.removeImmediately:906 com.android.server.wm.WindowState.removeImmediately:2687 com.android.server.wm.WindowState.destroySurface:3924 
+02-22 17:42:31.372  1858  1884 I WindowManager: DisplayContent w: Window{5e35996 u0 com.pfeprojet/com.pfeprojet.MainActivity} Apply preferredModeId = 3
+02-22 17:42:31.374  1858  1884 I WindowManager:   onAnimationFinished on win=Window{6ec5b91 u0 com.pfeprojet/com.pfeprojet.MainActivity}
+02-22 17:42:31.380  1858  1884 I WindowManager: DisplayContent w: Window{5e35996 u0 com.pfeprojet/com.pfeprojet.MainActivity} Apply preferredModeId = 3
+02-22 17:42:31.382  1160  1160 I BufferQueueDebug: [com.pfeprojet/com.pfeprojet.MainActivity#403113](this:0xb400007828ce6638,id:-1,api:0,p:-1,c:1160) onDestructor()
+02-22 17:42:31.406  1435  1533 D AAL     : 02-22 05:42:31.373 BL= 676,ESS= 256, 02-22 05:42:31.381 BL= 677,ESS= 256, 02-22 05:42:31.389 BL= 678,ESS= 256, 02-22 05:42:31.398 BL= 679,ESS= 256, 02-22 05:42:31.406 BL= 680,ESS= 256, 
+02-22 17:42:31.447  1435  1533 D AAL     : 02-22 05:42:31.414 BL= 681,ESS= 256, 02-22 05:42:31.422 BL= 682,ESS= 256, 02-22 05:42:31.430 BL= 683,ESS= 256, 02-22 05:42:31.439 BL= 684,ESS= 256, 02-22 05:42:31.447 BL= 685,ESS= 256, 
+02-22 17:42:31.457  2714  2754 I tmw_    : notifyInputMethodShow: false mFocusOnMultiDisplay: false
+02-22 17:42:31.488  1120  1173 I mtkpower@impl: [powerd_req] TIMER_MSG_PERF_LOCK_TIMEOUT hdl:1269502
+02-22 17:42:31.489  1435  1533 D AAL     : 02-22 05:42:31.456 BL= 686,ESS= 256, 02-22 05:42:31.463 BL= 687,ESS= 256, 02-22 05:42:31.472 BL= 688,ESS= 256, 02-22 05:42:31.481 BL= 689,ESS= 256, 02-22 05:42:31.489 BL= 690,ESS= 256, 
+02-22 17:42:31.494  1858  1884 I WindowManager:   onAnimationFinished on win=Window{b907b4 u0 com.pfeprojet/com.pfeprojet.MainActivity}
+02-22 17:42:31.495  1858  1884 I WindowManager: DisplayContent w: Window{b907b4 u0 com.pfeprojet/com.pfeprojet.MainActivity} Apply preferredModeId = 3
+02-22 17:42:31.504  1104  1104 I hwcomposer: [HWC] (0) displaySetActiveConfig config:2  
+02-22 17:42:31.505  1858  1884 I WindowManager: DisplayContent w: Window{b907b4 u0 com.pfeprojet/com.pfeprojet.MainActivity} Apply preferredModeId = 3
+02-22 17:42:31.511  1858  1883 I DisplayDeviceRepository: Display device changed: DisplayDeviceInfo{"Built-in Screen": uniqueId="local:0", 1080 x 2460, modeId 3, defaultModeId 1, supportedModes [{id=1, width=1080, height=2460, fps=120.00001, alternativeRefreshRates=[60.0, 90.0]}, {id=2, width=1080, height=2460, fps=90.0, alternativeRefreshRates=[60.0, 120.00001]}, {id=3, width=1080, height=2460, fps=60.0, alternativeRefreshRates=[90.0, 120.00001]}], colorMode 0, supportedColorModes [0], hdrCapabilities HdrCapabilities{mSupportedHdrTypes=[], mMaxLuminance=500.0, mMaxAverageLuminance=500.0, mMinLuminance=0.0}, allmSupported false, gameContentTypeSupported false, density 480, 396.565 x 396.565 dpi, appVsyncOff 2400001, presDeadline 28600000, cutout DisplayCutout{insets=Rect(0, 108 - 0, 0) waterfall=Insets{left=0, top=0, right=0, bottom=0} boundingRect={Bounds=[Rect(0, 0 - 0, 0), Rect(468, 0 - 612, 108), Rect(0, 0 - 0, 0), Rect(0, 0 - 0, 0)]} cutoutPathParserInfo={CutoutPathParserInfo{displayWidth=1080 displayHeight=2460 physicalDisplayWidth=1080 physicalDisplayHeight=2460 density={3.0} cutoutSpec={M -24,0 L -24,36 L 24,36 L 24,0 Z @dp} rotation={0} scale={1.0} physicalPixelDisplaySizeRatio={1.0}}}}, touch INTERNAL, rotation 0, type INTERNAL, address {port=0}, deviceProductInfo null, state ON, frameRateOverride , brightnessMinimum 0.0, brightnessMaximum 1.0, brightnessDefault 0.4, roundedCorners RoundedCorners{[RoundedCorner{position=TopLeft, radius=78, center=Point(78, 78)}, RoundedCorner{position=TopRight, radius=78, center=Point(1002, 78)}, RoundedCorner{position=BottomRight, radius=78, center=Point(1002, 2382)}, RoundedCorner{position=BottomLeft, radius=78, center=Point(78, 2382)}]}, FLAG_ALLOWED_TO_BE_DEFAULT_DISPLAY, FLAG_ROTATES_WITH_CONTENT, FLAG_SECURE, FLAG_SUPPORTS_PROTECTED_BUFFERS, installOrientation 0}
+02-22 17:42:31.512  1858  1883 D Griffin/DeviceState: virtualDisplayPackageName :{}
+02-22 17:42:31.514  1858  1884 I WindowManager: DisplayContent w: Window{b907b4 u0 com.pfeprojet/com.pfeprojet.MainActivity} Apply preferredModeId = 3
+02-22 17:42:31.517  1858  1884 I WindowManager: DisplayContent w: Window{b907b4 u0 com.pfeprojet/com.pfeprojet.MainActivity} Apply preferredModeId = 3
+02-22 17:42:31.530  1435  1533 D AAL     : 02-22 05:42:31.496 BL= 691,ESS= 256, 02-22 05:42:31.505 BL= 692,ESS= 256, 02-22 05:42:31.513 BL= 693,ESS= 256, 02-22 05:42:31.521 BL= 694,ESS= 256, 02-22 05:42:31.530 BL= 695,ESS= 256, 
+02-22 17:42:31.538  1160  1293 W VSyncPredictor: VSyncPredictor::setPeriod current period =16666667
+02-22 17:42:31.629  1435  1533 D AAL     : 02-22 05:42:31.546 BL= 696,ESS= 256, 02-22 05:42:31.563 BL= 697,ESS= 256, 02-22 05:42:31.579 BL= 698,ESS= 256, 02-22 05:42:31.612 BL= 699,ESS= 256, 02-22 05:42:31.629 BL= 700,ESS= 256, 
