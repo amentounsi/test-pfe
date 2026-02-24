@@ -100,7 +100,7 @@ class CardDetectorModule {
       minAreaRatio: 0.015,
       maxAreaRatio: 0.85,
       targetAspectRatio: 1.586,
-      aspectRatioTolerance: 0.20,
+      aspectRatioTolerance: 0.28,
     };
 
     const mergedConfig = { ...defaults, ...config };

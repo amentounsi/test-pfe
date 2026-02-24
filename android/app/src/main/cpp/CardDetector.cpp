@@ -251,21 +251,36 @@ cv::Mat CardDetector::preprocessFrame(const cv::Mat& input) {
         gray_ = input;  // already gray — no copy needed
 
     // Diagnostic
+    // Compute stddev first — used both for diagnostics and CLAHE decision.
+    double grayStdDev = 0.0;
     {
         cv::Scalar m, s;
         cv::meanStdDev(gray_, m, s);
+        grayStdDev = s[0];
         LOGD("Stage1-diag: gray %dx%d  mean=%.1f  stddev=%.1f",
              gray_.cols, gray_.rows, m[0], s[0]);
     }
 
-    // 1-b  CLAHE – local contrast enhancement before blur.
-    //      Restores weak card/background edge (e.g. white card on beige desk).
-    //      Applied on gray BEFORE GaussianBlur so blur doesn't erase the boost.
-    cv::Ptr<cv::CLAHE> clahe = cv::createCLAHE(
-        config_.claheClipLimit,
-        cv::Size(config_.claheTileSize, config_.claheTileSize));
+    // 1-b  Adaptive CLAHE – intensity conditioned on scene stddev.
+    //      On dark textured backgrounds (mousepad, etc.) CLAHE amplifies micro-texture
+    //      → Canny produces 80k+ edges → card contour fuses with background.
+    //      Reduce or skip CLAHE when stddev is low.
     cv::Mat claheOut;
-    clahe->apply(gray_, claheOut);
+    if (grayStdDev < 35.0) {
+        // Dark / very uniform scene: skip CLAHE entirely.
+        claheOut = gray_;
+        LOGD("Stage1: CLAHE SKIPPED (stddev=%.1f < 35)", grayStdDev);
+    } else if (grayStdDev < 55.0) {
+        // Moderate contrast (hand-held, indoor): gentle boost.
+        cv::Ptr<cv::CLAHE> clahe = cv::createCLAHE(1.2, cv::Size(6, 6));
+        clahe->apply(gray_, claheOut);
+        LOGD("Stage1: CLAHE clipLimit=1.2 (stddev=%.1f)", grayStdDev);
+    } else {
+        // High contrast scene (bright background, beige desk): full boost.
+        cv::Ptr<cv::CLAHE> clahe = cv::createCLAHE(1.5, cv::Size(6, 6));
+        clahe->apply(gray_, claheOut);
+        LOGD("Stage1: CLAHE clipLimit=1.5 (stddev=%.1f)", grayStdDev);
+    }
 
     // 1-c  GaussianBlur – smooth noise after CLAHE
     int ks = (config_.gaussianBlurSize % 2 == 0) ? config_.gaussianBlurSize + 1
@@ -318,29 +333,112 @@ cv::Mat CardDetector::preprocessFrame(const cv::Mat& input) {
 
 std::vector<std::vector<cv::Point>>
 CardDetector::extractContours(const cv::Mat& edges) {
+    // RETR_LIST (not RETR_EXTERNAL) so that the card rectangle is returned even when
+    // the card is held in hand: EXTERNAL only gives the outer hand silhouette,
+    // LIST also returns the card's own visible border contour inside it.
     std::vector<std::vector<cv::Point>> all;
-    cv::findContours(edges.clone(), all, cv::RETR_EXTERNAL, cv::CHAIN_APPROX_SIMPLE);
+    cv::findContours(edges.clone(), all, cv::RETR_LIST, cv::CHAIN_APPROX_SIMPLE);
 
     int totalFound = static_cast<int>(all.size());
+    double imageArea = static_cast<double>(edges.cols) * edges.rows;
 
-    // Sort descending by area
-    std::sort(all.begin(), all.end(), [](const auto& a, const auto& b) {
+    // Pre-filter by area to prevent card-text/noise fragments from flooding the pool.
+    // Keep contours with areaRatio in [minAreaRatio*0.5, maxAreaRatio].
+    float areaLow  = config_.minAreaRatio * 0.5f;
+    float areaHigh = config_.maxAreaRatio;
+    std::vector<std::vector<cv::Point>> filtered;
+    filtered.reserve(all.size());
+    for (auto& c : all) {
+        double r = cv::contourArea(c) / imageArea;
+        if (r >= areaLow && r <= areaHigh)
+            filtered.push_back(std::move(c));
+    }
+
+    // 1. Sort by area DESC, keep a pool of topN×3 (larger pool compensates for RETR_LIST duplicates).
+    std::sort(filtered.begin(), filtered.end(), [](const auto& a, const auto& b) {
         return cv::contourArea(a) > cv::contourArea(b);
     });
+    int pool = std::min(static_cast<int>(filtered.size()), config_.topN * 3);
+    filtered.resize(pool);
 
-    // Keep top-N only
-    int keep = std::min(static_cast<int>(all.size()), config_.topN);
-    all.resize(keep);
+    // 2. Quick-score each contour: 0.4*ratioScore + 0.3*convex4 + 0.2*areaScore + 0.1*center
+    struct ScoredContour {
+        std::vector<cv::Point> contour;
+        float quickScore;
+        double area;
+    };
+    std::vector<ScoredContour> scored;
+    scored.reserve(pool);
 
-    if (config_.debugMode && !all.empty()) {
-        for (int i = 0; i < keep; i++) {
-            double a = cv::contourArea(all[i]);
-            LOGD("Stage2: contour[%d] area=%.0f", i, a);
+    const float target    = config_.targetAspectRatio;
+    const float invTarget = 1.f / target;
+
+    for (auto& c : filtered) {
+        double area      = cv::contourArea(c);
+        double areaRatio = area / imageArea;
+        float  qs        = 0.f;
+
+        // Area score: prefer 5-30% of frame. Penalise oversized (likely fused hand+card).
+        float areaScore;
+        if (areaRatio <= 0.30)
+            areaScore = static_cast<float>(std::min(areaRatio / 0.20, 1.0));
+        else
+            areaScore = std::max(0.f, 1.f - static_cast<float>((areaRatio - 0.30) / 0.55));
+        qs += 0.2f * areaScore;
+
+        // Try multiple epsilon values (mirrors Stage3) to reliably get 4-pt approx.
+        // eps=0.02 alone misses many valid card contours at oblique angles.
+        float bestRatioScore = 0.f;
+        bool  foundQuad      = false;
+        cv::Point2f quadCentroid(0,0);
+        static const float epsList[] = {0.015f, 0.02f, 0.03f, 0.04f, 0.05f};
+        for (float eps : epsList) {
+            std::vector<cv::Point> approx;
+            cv::approxPolyDP(c, approx, eps * cv::arcLength(c, true), true);
+            if (approx.size() == 4 && cv::isContourConvex(approx)) {
+                float ar   = calcAspectRatio(approx);
+                float errL = std::abs(ar - target)    / target;
+                float errP = std::abs(ar - invTarget)  / invTarget;
+                float rs   = std::max(0.f, 1.f - std::min(errL, errP));
+                if (rs > bestRatioScore) {
+                    bestRatioScore = rs;
+                    foundQuad = true;
+                    cv::Moments mom = cv::moments(approx);
+                    if (mom.m00 > 0)
+                        quadCentroid = {static_cast<float>(mom.m10/mom.m00),
+                                        static_cast<float>(mom.m01/mom.m00)};
+                }
+            }
         }
+        if (foundQuad) {
+            qs += 0.3f + 0.4f * bestRatioScore;
+            // Center proximity
+            float cx = quadCentroid.x / edges.cols;
+            float cy = quadCentroid.y / edges.rows;
+            float dist = std::sqrt((cx-0.5f)*(cx-0.5f) + (cy-0.5f)*(cy-0.5f));
+            qs += 0.1f * std::max(0.f, 1.f - dist * 2.f);
+        }
+        scored.push_back({c, qs, area});
     }
-    LOGD("Stage2: found %d total, keeping top %d", totalFound, keep);
 
-    return all;
+    // 3. Sort pool by quick-score DESC, keep topN
+    std::sort(scored.begin(), scored.end(), [](const auto& a, const auto& b) {
+        return a.quickScore > b.quickScore;
+    });
+
+    int keep = std::min(static_cast<int>(scored.size()), config_.topN);
+    std::vector<std::vector<cv::Point>> result;
+    result.reserve(keep);
+    for (int i = 0; i < keep; i++) {
+        if (config_.debugMode)
+            LOGD("Stage2: contour[%d] area=%.1f%%  quickScore=%.3f",
+                 i, scored[i].area / imageArea * 100, scored[i].quickScore);
+        result.push_back(std::move(scored[i].contour));
+    }
+    LOGD("Stage2: found %d total, filtered=%d, pool=%d, keeping top %d (by geo-score)",
+         totalFound, (int)filtered.size(), pool, keep);
+
+    return result;
 }
 
 // ══════════════════════════════════════════════

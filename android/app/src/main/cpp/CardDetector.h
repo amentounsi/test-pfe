@@ -112,7 +112,7 @@ struct DetectionConfig {
     float minAreaRatio         = 0.015f; // lowered: card on light bg has fragmented contour
     float maxAreaRatio         = 0.85f;  // card very close to camera
     float targetAspectRatio    = 1.586f; // ID-1 standard (85.6 x 54 mm)
-    float aspectRatioTolerance = 0.20f;  // ±20% → range 1.27-1.90 (handles perspective)
+    float aspectRatioTolerance = 0.28f;  // ±28% → range 1.14-2.03 (handles hand occlusion + perspective)
     float edgeDensityThreshold = 0.20f;  // 2nd-worst side must have ≥20% real edges
 
     // --- Stage 4: scoring weights ---
@@ -134,16 +134,16 @@ struct DetectionConfig {
     // Checks all 4 corners; at least 1 must pass ALL 3 conditions.
     bool  redValidationEnabled   = true;
     int   redCrThreshold         = 145;   // Cr > 145 → red (Tunisian flag red is vivid)
-    float redMinRatio            = 0.04f; // ≥4% of corner zone must be red
+    float redMinRatio            = 0.015f;// ≥1.5% of corner zone must be red (lowered for dim light)
     int   redWhiteYThreshold     = 180;   // Y > 180 → white pixel
-    float redWhiteMinRatio       = 0.35f; // ≥35% of zone must be white (card background)
+    float redWhiteMinRatio       = 0.25f; // ≥25% of zone must be white (card background)
     float redClusterMinRatio     = 0.02f; // largest red contour ≥2% of zone (compact flag)
     float redCornerZoneW         = 0.18f; // 18% of quad width per corner zone
     float redCornerZoneH         = 0.25f; // 25% of quad height per corner zone
 
     // --- Stage 7: temporal buffer ---
     int temporalBufferSize     = 5;     // keep last N frames
-    int temporalMinValid       = 4;     // need M/N valid to confirm
+    int temporalMinValid       = 3;     // need M/N valid to confirm
 
     // --- Debug ---
     bool debugMode             = true;
