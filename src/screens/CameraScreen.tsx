@@ -224,7 +224,7 @@ export const CameraScreen: React.FC<CameraScreenProps> = ({
         viewHeight={viewDimensions.height}
         aspectRatio={1.586}
         padding={40}
-        showValidation={(detectionResult?.debug?.candidateQuads ?? 0) > 0 || detectionResult?.isValid === true}
+        showValidation={(detectionResult?.debug?.temporalValidCount ?? 0) > 0 || detectionResult?.isValid === true}
         isAligned={detectionResult?.isValid || false}
       />
       

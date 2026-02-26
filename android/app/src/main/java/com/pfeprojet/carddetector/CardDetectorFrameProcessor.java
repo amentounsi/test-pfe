@@ -127,19 +127,20 @@ public class CardDetectorFrameProcessor extends FrameProcessorPlugin {
     
     /**
      * Parse native detection result into JavaScript-friendly format.
-     * Native returns float[20]:
+     * Native returns float[21]:
      *   [0] isValid, [1] confidence, [2..9] corners,
      *   [10] edgeWhitePixels, [11] totalContours, [12] candidateQuads,
      *   [13] bestScore, [14] topNContours,
      *   [15] rejectedByArea, [16] rejectedByApprox, [17] rejectedByAspect,
-     *   [18] largestContourAreaRatio, [19] rejectedByEdgeDensity
+     *   [18] largestContourAreaRatio, [19] rejectedByEdgeDensity,
+     *   [20] temporalValidCount
      *
      * IMPORTANT: VisionCamera only supports Boolean, Integer, Double (NOT Float), String, Map, List
      */
     private Map<String, Object> parseDetectionResult(float[] result, int width, int height, String orientation) {
         Map<String, Object> response = new HashMap<>();
         
-        if (result == null || result.length < 20) {
+        if (result == null || result.length < 21) {
             response.put("isValid", Boolean.FALSE);
             response.put("corners", new ArrayList<>());
             response.put("frameWidth", Integer.valueOf(width));
@@ -181,6 +182,7 @@ public class CardDetectorFrameProcessor extends FrameProcessorPlugin {
         debug.put("rejectedByAspect", Integer.valueOf((int) result[17]));
         debug.put("largestAreaRatio", Double.valueOf((double) result[18]));
         debug.put("rejectedByEdgeDensity", Integer.valueOf((int) result[19]));
+        debug.put("temporalValidCount", Integer.valueOf((int) result[20]));
         response.put("debug", debug);
         
         return response;

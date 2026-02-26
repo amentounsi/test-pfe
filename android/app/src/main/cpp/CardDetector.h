@@ -38,8 +38,21 @@ struct Point2D {
 };
 
 /**
+ * Detection state for hysteresis state machine
+ * SEARCHING: No valid candidate, using strict entry thresholds
+ * ALIGNING:  Candidate exists but not confirmed, using strict thresholds
+ * LOCKED:    Confirmed detection, using relaxed keep thresholds
+ */
+enum class DetectionState {
+    SEARCHING,
+    ALIGNING,
+    LOCKED
+};
+
+/**
  * Overlay bounds for guided detection (normalized 0-1)
  * When enabled, detection validates quads against this fixed frame
+ * Includes hysteresis thresholds to prevent oscillation
  */
 struct OverlayBounds {
     bool  enabled = false;   // Enable overlay-guided detection
@@ -48,11 +61,17 @@ struct OverlayBounds {
     float width   = 0.f;     // Normalized 0-1
     float height  = 0.f;     // Normalized 0-1
     
-    // Validation tolerances
-    float areaToleranceLow  = 0.20f;  // Quad must be >= 20% of overlay area
-    float areaToleranceHigh = 2.50f;  // Quad must be <= 250% of overlay area
-    float centerToleranceRatio = 0.50f; // Max distance from overlay center (50% of diagonal)
-    float overlapMinRatio = 0.30f;    // Quad must overlap >= 30% with overlay
+    // Entry thresholds (strict - used in SEARCHING/ALIGNING states)
+    float areaToleranceLow  = 0.25f;  // Quad must be >= 25% of overlay area
+    float areaToleranceHigh = 2.20f;  // Quad must be <= 220% of overlay area
+    float centerToleranceRatio = 0.35f; // Max distance from overlay center (35% of diagonal)
+    float overlapMinRatio = 0.40f;    // Quad must overlap >= 40% with overlay
+    
+    // Keep thresholds (relaxed - used in LOCKED state for stability)
+    float areaToleranceLowKeep  = 0.22f;  // Allow down to 22% when locked
+    float areaToleranceHighKeep = 2.50f;  // Allow up to 250% when locked
+    float centerToleranceRatioKeep = 0.40f; // Allow 40% center drift when locked
+    float overlapMinRatioKeep = 0.35f;    // Allow 35% overlap when locked
 };
 
 /**
@@ -153,6 +172,16 @@ struct DetectionConfig {
     // BorderContrast normalization: contrast of 50 gray levels → score=1.0
     float borderContrastNorm = 50.f;
 
+    // --- Stage 5e: appearance validation (semantic filter) ---
+    // Rejects objects that pass geometry but are visually not CIN cards
+    bool  appearanceValidationEnabled = true;
+    int   appearanceWarpWidth  = 640;   // Perspective-correct ROI width
+    int   appearanceWarpHeight = 400;   // Perspective-correct ROI height (ratio ≈ 1.6)
+    float appearanceMeanMin    = 55.f;  // Reject if mean < 55 (very dark - no light at all)
+    float appearanceStddevMax  = 55.f;  // Reject if stddev > 55 (too textured)
+    float appearanceMeanLowLight = 85.f;  // Combined check threshold (lowered for low light)
+    float appearanceStddevMedium = 50.f;  // Reject if mean < 85 AND stddev > 50
+
     // --- Stage 6: red corner validation ---
     // Checks all 4 corners; at least 1 must pass ALL 3 conditions.
     bool  redValidationEnabled   = true;
@@ -165,8 +194,9 @@ struct DetectionConfig {
     float redCornerZoneH         = 0.25f; // 25% of quad height per corner zone
 
     // --- Stage 7: temporal buffer ---
-    int temporalBufferSize     = 5;     // keep last N frames
-    int temporalMinValid       = 2;     // need M/N valid to confirm
+    int temporalBufferSize     = 6;     // keep last N frames
+    int temporalMinValid       = 3;     // need M/N valid to confirm
+    int lockedFailFramesToReset = 4;    // LOCKED → SEARCHING after N consecutive fails
 
     // --- Debug ---
     bool debugMode             = true;
@@ -237,6 +267,10 @@ private:
     std::vector<TemporalEntry> temporalBuf_;
     int                        temporalIdx_ = 0;
 
+    // Hysteresis state machine (Stage 7b)
+    DetectionState detectionState_ = DetectionState::SEARCHING;
+    int consecutiveFailFrames_ = 0;  // Counter for LOCKED→SEARCHING transition
+
     // Helpers
     float  calcEdgeDensity(const std::vector<cv::Point>& quad,
                            const cv::Mat& cannyEdges);
@@ -256,11 +290,20 @@ private:
     std::array<Point2D, 4> sortCorners(const std::vector<cv::Point>& quad);
     float  ptDist(const cv::Point& a, const cv::Point& b);
     
+    // --- Stage 5e: Appearance Validation ---
+    /** Validate quad appearance (mean luminance, texture variance)
+     *  Returns true if quad passes appearance checks */
+    bool   validateAppearance(const std::vector<cv::Point>& quad,
+                               const cv::Mat& grayMat,
+                               float& outMean, float& outStddev);
+    
     // --- Overlay-Guided Detection (NEW) ---
-    /** Check if quad satisfies overlay constraints (area, center, overlap) */
+    /** Check if quad satisfies overlay constraints (area, center, overlap)
+     *  Uses hysteresis: LOCKED state uses relaxed keep-thresholds */
     bool   validateOverlayConstraints(const std::vector<cv::Point>& quad,
                                        int imgW, int imgH,
-                                       const OverlayBounds& overlay);
+                                       const OverlayBounds& overlay,
+                                       DetectionState state);
     /** Compute IoU (Intersection over Union) between quad and overlay rect */
     float  computeQuadOverlayOverlap(const std::vector<cv::Point>& quad,
                                       int imgW, int imgH,

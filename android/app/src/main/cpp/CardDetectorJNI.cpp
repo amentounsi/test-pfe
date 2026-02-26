@@ -3,7 +3,7 @@
  * CardDetectorJNI.cpp
  * JNI bridge – exposes C++ CardDetector to Java/Kotlin
  *
- * Return format (float[20]):
+ * Return format (float[21]):
  *   [0]  isValid          (1.0 / 0.0)
  *   [1]  confidence       (0..1)
  *   [2..9]  corners x0,y0 … x3,y3
@@ -16,7 +16,8 @@
  *   [16] rejectedByApprox
  *   [17] rejectedByAspect
  *   [18] largestContourAreaRatio
- *   [19] reserved (0)
+ *   [19] rejectedByEdgeDensity
+ *   [20] temporalValidCount
  */
 
 #include <jni.h>
@@ -31,7 +32,7 @@
 #define LOGI(...) __android_log_print(ANDROID_LOG_INFO,  LOG_TAG, __VA_ARGS__)
 #define LOGE(...) __android_log_print(ANDROID_LOG_ERROR, LOG_TAG, __VA_ARGS__)
 
-static constexpr int RESULT_LEN = 20;
+static constexpr int RESULT_LEN = 21;
 static std::unique_ptr<CardDetection::CardDetector> g_detector = nullptr;
 
 // Fill the 20-float result array from a CardDetectionResult
@@ -54,6 +55,7 @@ static void fillResult(float* out, const CardDetection::CardDetectionResult& r) 
     out[17] = static_cast<float>(r.debug.rejectedByAspect);
     out[18] = r.debug.largestContourAreaRatio;
     out[19] = static_cast<float>(r.debug.rejectedByEdgeDensity);
+    out[20] = static_cast<float>(r.debug.temporalValidCount);
 }
 
 extern "C" {

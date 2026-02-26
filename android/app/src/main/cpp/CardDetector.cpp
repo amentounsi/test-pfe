@@ -182,6 +182,18 @@ CardDetectionResult CardDetector::detectCard(const cv::Mat& frame) {
             temporalBuf_.resize(config_.temporalBufferSize);
         temporalBuf_[temporalIdx_ % config_.temporalBufferSize].isValid = false;
         temporalIdx_++;
+        
+        // State transition: track consecutive failures for LOCKED state
+        if (detectionState_ == DetectionState::LOCKED) {
+            consecutiveFailFrames_++;
+            if (consecutiveFailFrames_ >= config_.lockedFailFramesToReset) {
+                LOGD("State: LOCKED -> SEARCHING (Stage5 failed %d consecutive frames)",
+                     consecutiveFailFrames_);
+                detectionState_ = DetectionState::SEARCHING;
+                consecutiveFailFrames_ = 0;
+            }
+        }
+        
         lastResult_ = result;
         return result;
     }
@@ -200,6 +212,18 @@ CardDetectionResult CardDetector::detectCard(const cv::Mat& frame) {
                 temporalBuf_.resize(config_.temporalBufferSize);
             temporalBuf_[temporalIdx_ % config_.temporalBufferSize].isValid = false;
             temporalIdx_++;
+            
+            // State transition: track consecutive failures for LOCKED state
+            if (detectionState_ == DetectionState::LOCKED) {
+                consecutiveFailFrames_++;
+                if (consecutiveFailFrames_ >= config_.lockedFailFramesToReset) {
+                    LOGD("State: LOCKED -> SEARCHING (Stage5b failed %d consecutive frames)",
+                         consecutiveFailFrames_);
+                    detectionState_ = DetectionState::SEARCHING;
+                    consecutiveFailFrames_ = 0;
+                }
+            }
+            
             lastResult_ = result;
             return result;
         }
@@ -211,6 +235,18 @@ CardDetectionResult CardDetector::detectCard(const cv::Mat& frame) {
             temporalBuf_.resize(config_.temporalBufferSize);
         temporalBuf_[temporalIdx_ % config_.temporalBufferSize].isValid = false;
         temporalIdx_++;
+        
+        // State transition: track consecutive failures for LOCKED state
+        if (detectionState_ == DetectionState::LOCKED) {
+            consecutiveFailFrames_++;
+            if (consecutiveFailFrames_ >= config_.lockedFailFramesToReset) {
+                LOGD("State: LOCKED -> SEARCHING (Stage5b-free failed %d consecutive frames)",
+                     consecutiveFailFrames_);
+                detectionState_ = DetectionState::SEARCHING;
+                consecutiveFailFrames_ = 0;
+            }
+        }
+        
         lastResult_ = result;
         return result;
     }
@@ -226,17 +262,57 @@ CardDetectionResult CardDetector::detectCard(const cv::Mat& frame) {
             }
         }
         
-        bool overlayOk = validateOverlayConstraints(fullFrameQuad, W, H, config_.overlay);
+        bool overlayOk = validateOverlayConstraints(fullFrameQuad, W, H, config_.overlay, detectionState_);
         if (!overlayOk) {
-            LOGD("Stage5d: REJECTED overlay constraints (area/center/overlap)");
+            LOGD("Stage5d: REJECTED overlay constraints (area/center/overlap) state=%d",
+                 static_cast<int>(detectionState_));
             if (static_cast<int>(temporalBuf_.size()) < config_.temporalBufferSize)
                 temporalBuf_.resize(config_.temporalBufferSize);
             temporalBuf_[temporalIdx_ % config_.temporalBufferSize].isValid = false;
             temporalIdx_++;
+            
+            // State transition: track consecutive failures for LOCKED state
+            if (detectionState_ == DetectionState::LOCKED) {
+                consecutiveFailFrames_++;
+                if (consecutiveFailFrames_ >= config_.lockedFailFramesToReset) {
+                    LOGD("State: LOCKED -> SEARCHING (failed %d consecutive frames)",
+                         consecutiveFailFrames_);
+                    detectionState_ = DetectionState::SEARCHING;
+                    consecutiveFailFrames_ = 0;
+                }
+            }
+            
             lastResult_ = result;
             return result;
         }
-        LOGD("Stage5d: overlay constraints PASSED");
+        LOGD("Stage5d: overlay constraints PASSED (state=%d)", static_cast<int>(detectionState_));
+    }
+
+    // Stage 5e – Appearance validation: mean luminance, texture variance (semantic filter)
+    if (config_.appearanceValidationEnabled) {
+        float appearMean = 0.f, appearStddev = 0.f;
+        bool appearanceOk = validateAppearance(best.quad, detectionFrame, appearMean, appearStddev);
+        if (!appearanceOk) {
+            LOGD("Stage5e: REJECTED appearance (mean=%.1f stddev=%.1f)", appearMean, appearStddev);
+            if (static_cast<int>(temporalBuf_.size()) < config_.temporalBufferSize)
+                temporalBuf_.resize(config_.temporalBufferSize);
+            temporalBuf_[temporalIdx_ % config_.temporalBufferSize].isValid = false;
+            temporalIdx_++;
+            
+            // State transition: track consecutive failures for LOCKED state
+            if (detectionState_ == DetectionState::LOCKED) {
+                consecutiveFailFrames_++;
+                if (consecutiveFailFrames_ >= config_.lockedFailFramesToReset) {
+                    LOGD("State: LOCKED -> SEARCHING (Stage5e failed %d consecutive frames)",
+                         consecutiveFailFrames_);
+                    detectionState_ = DetectionState::SEARCHING;
+                    consecutiveFailFrames_ = 0;
+                }
+            }
+            
+            lastResult_ = result;
+            return result;
+        }
     }
 
     // Border contrast score (computed here using gray detectionFrame)
@@ -256,6 +332,18 @@ CardDetectionResult CardDetector::detectCard(const cv::Mat& frame) {
                 temporalBuf_.resize(config_.temporalBufferSize);
             temporalBuf_[temporalIdx_ % config_.temporalBufferSize].isValid = false;
             temporalIdx_++;
+            
+            // State transition: track consecutive failures for LOCKED state
+            if (detectionState_ == DetectionState::LOCKED) {
+                consecutiveFailFrames_++;
+                if (consecutiveFailFrames_ >= config_.lockedFailFramesToReset) {
+                    LOGD("State: LOCKED -> SEARCHING (Stage6 failed %d consecutive frames)",
+                         consecutiveFailFrames_);
+                    detectionState_ = DetectionState::SEARCHING;
+                    consecutiveFailFrames_ = 0;
+                }
+            }
+            
             lastResult_ = result;
             return result;
         }
@@ -275,6 +363,18 @@ CardDetectionResult CardDetector::detectCard(const cv::Mat& frame) {
             temporalBuf_.resize(config_.temporalBufferSize);
         temporalBuf_[temporalIdx_ % config_.temporalBufferSize].isValid = false;
         temporalIdx_++;
+        
+        // State transition: track consecutive failures for LOCKED state
+        if (detectionState_ == DetectionState::LOCKED) {
+            consecutiveFailFrames_++;
+            if (consecutiveFailFrames_ >= config_.lockedFailFramesToReset) {
+                LOGD("State: LOCKED -> SEARCHING (confidence failed %d consecutive frames)",
+                     consecutiveFailFrames_);
+                detectionState_ = DetectionState::SEARCHING;
+                consecutiveFailFrames_ = 0;
+            }
+        }
+        
         lastResult_ = result;
         return result;
     }
@@ -316,11 +416,26 @@ CardDetectionResult CardDetector::detectCard(const cv::Mat& frame) {
         result.isValid    = true;
         result.confidence = confidence;
         result.corners    = corners;
-        LOGI("DETECTED  score=%.2f  confidence=%.2f  border=%.2f  red=%.2f",
+        
+        // State transition: SEARCHING/ALIGNING -> LOCKED
+        if (detectionState_ != DetectionState::LOCKED) {
+            LOGD("State: %s -> LOCKED (temporal confirmed %d/%d)",
+                 detectionState_ == DetectionState::SEARCHING ? "SEARCHING" : "ALIGNING",
+                 validCount, config_.temporalMinValid);
+            detectionState_ = DetectionState::LOCKED;
+        }
+        consecutiveFailFrames_ = 0;  // Reset fail counter on success
+        
+        LOGI("DETECTED  score=%.2f  confidence=%.2f  border=%.2f  red=%.2f  state=LOCKED",
              best.score, confidence, borderScore, redScore);
     } else {
-        LOGD("Stage7: waiting for temporal confirmation (%d/%d)",
-             validCount, config_.temporalBufferSize);
+        // State transition: track alignment progress
+        if (detectionState_ == DetectionState::SEARCHING && validCount > 0) {
+            LOGD("State: SEARCHING -> ALIGNING (have %d valid frames)", validCount);
+            detectionState_ = DetectionState::ALIGNING;
+        }
+        LOGD("Stage7: waiting for temporal confirmation (%d/%d) state=%d",
+             validCount, config_.temporalMinValid, static_cast<int>(detectionState_));
     }
 
     lastResult_ = result;
@@ -1093,6 +1208,123 @@ std::array<Point2D, 4> CardDetector::sortCorners(const std::vector<cv::Point>& q
 }
 
 // ──────────────────────────────────────────────────────────────────────────────
+// Stage 5e: Appearance Validation (Semantic Filter)
+// ──────────────────────────────────────────────────────────────────────────────
+
+bool CardDetector::validateAppearance(
+    const std::vector<cv::Point>& quad,
+    const cv::Mat& grayMat,
+    float& outMean, float& outStddev)
+{
+    if (quad.size() != 4 || grayMat.empty()) {
+        outMean = 0.f;
+        outStddev = 0.f;
+        return false;
+    }
+    
+    // Sort corners for consistent ordering: TL, TR, BR, BL
+    std::vector<cv::Point2f> srcPts(4);
+    cv::Point2f center(0, 0);
+    for (const auto& p : quad) {
+        center.x += p.x;
+        center.y += p.y;
+    }
+    center.x /= 4.f;
+    center.y /= 4.f;
+    
+    // Classify points by position relative to center
+    std::vector<cv::Point2f> topPts, bottomPts;
+    for (const auto& p : quad) {
+        if (p.y < center.y)
+            topPts.push_back(cv::Point2f(static_cast<float>(p.x), static_cast<float>(p.y)));
+        else
+            bottomPts.push_back(cv::Point2f(static_cast<float>(p.x), static_cast<float>(p.y)));
+    }
+    
+    // Handle edge cases
+    while (topPts.size() < 2 && !bottomPts.empty()) {
+        topPts.push_back(bottomPts.back());
+        bottomPts.pop_back();
+    }
+    while (bottomPts.size() < 2 && !topPts.empty()) {
+        bottomPts.push_back(topPts.back());
+        topPts.pop_back();
+    }
+    
+    if (topPts.size() < 2 || bottomPts.size() < 2) {
+        outMean = 0.f;
+        outStddev = 0.f;
+        return false;
+    }
+    
+    // Sort by x: left first
+    std::sort(topPts.begin(), topPts.end(), [](const cv::Point2f& a, const cv::Point2f& b) {
+        return a.x < b.x;
+    });
+    std::sort(bottomPts.begin(), bottomPts.end(), [](const cv::Point2f& a, const cv::Point2f& b) {
+        return a.x < b.x;
+    });
+    
+    srcPts[0] = topPts[0];     // TL
+    srcPts[1] = topPts[1];     // TR
+    srcPts[2] = bottomPts[1];  // BR
+    srcPts[3] = bottomPts[0];  // BL
+    
+    // Destination points for perspective warp
+    const int warpW = config_.appearanceWarpWidth;
+    const int warpH = config_.appearanceWarpHeight;
+    std::vector<cv::Point2f> dstPts = {
+        cv::Point2f(0, 0),
+        cv::Point2f(static_cast<float>(warpW - 1), 0),
+        cv::Point2f(static_cast<float>(warpW - 1), static_cast<float>(warpH - 1)),
+        cv::Point2f(0, static_cast<float>(warpH - 1))
+    };
+    
+    // Compute perspective transform and warp
+    cv::Mat transform = cv::getPerspectiveTransform(srcPts, dstPts);
+    cv::Mat warpedROI;
+    cv::warpPerspective(grayMat, warpedROI, transform, cv::Size(warpW, warpH));
+    
+    // Apply light Gaussian blur to reduce sensor noise
+    cv::Mat blurredROI;
+    cv::GaussianBlur(warpedROI, blurredROI, cv::Size(3, 3), 0);
+    
+    // Compute mean and standard deviation
+    cv::Scalar mean, stddev;
+    cv::meanStdDev(blurredROI, mean, stddev);
+    
+    outMean = static_cast<float>(mean[0]);
+    outStddev = static_cast<float>(stddev[0]);
+    
+    LOGD("Stage5e: appearance mean=%.1f stddev=%.1f", outMean, outStddev);
+    
+    // Combination-based rejection logic (preserves low-light detection)
+    // Rule 1: Reject if too dark (mean < 100)
+    if (outMean < config_.appearanceMeanMin) {
+        LOGD("Stage5e: REJECTED mean=%.1f < %.1f (too dark)", 
+             outMean, config_.appearanceMeanMin);
+        return false;
+    }
+    
+    // Rule 2: Reject if too textured (stddev > 55)
+    if (outStddev > config_.appearanceStddevMax) {
+        LOGD("Stage5e: REJECTED stddev=%.1f > %.1f (too textured - screen/wallpaper)",
+             outStddev, config_.appearanceStddevMax);
+        return false;
+    }
+    
+    // Rule 3: Reject if dark AND moderately textured (mean < 120 AND stddev > 40)
+    if (outMean < config_.appearanceMeanLowLight && outStddev > config_.appearanceStddevMedium) {
+        LOGD("Stage5e: REJECTED mean=%.1f < %.1f AND stddev=%.1f > %.1f (dark+textured)",
+             outMean, config_.appearanceMeanLowLight, outStddev, config_.appearanceStddevMedium);
+        return false;
+    }
+    
+    LOGD("Stage5e: appearance PASSED (mean=%.1f stddev=%.1f)", outMean, outStddev);
+    return true;
+}
+
+// ──────────────────────────────────────────────────────────────────────────────
 // Overlay-Guided Detection Helpers (NEW)
 // ──────────────────────────────────────────────────────────────────────────────
 
@@ -1127,9 +1359,21 @@ cv::Mat CardDetector::extractOverlayROI(
 bool CardDetector::validateOverlayConstraints(
     const std::vector<cv::Point>& quad,
     int imgW, int imgH,
-    const OverlayBounds& overlay)
+    const OverlayBounds& overlay,
+    DetectionState state)
 {
     if (quad.size() != 4) return false;
+    
+    // Select thresholds based on hysteresis state
+    // LOCKED state uses relaxed "keep" thresholds for stability
+    const bool useLocked = (state == DetectionState::LOCKED);
+    const float areaLow = useLocked ? overlay.areaToleranceLowKeep : overlay.areaToleranceLow;
+    const float areaHigh = useLocked ? overlay.areaToleranceHighKeep : overlay.areaToleranceHigh;
+    const float centerTol = useLocked ? overlay.centerToleranceRatioKeep : overlay.centerToleranceRatio;
+    const float overlapMin = useLocked ? overlay.overlapMinRatioKeep : overlay.overlapMinRatio;
+    
+    LOGD("validateOverlay: using %s thresholds (area=[%.2f,%.2f] center=%.2f overlap=%.2f)",
+         useLocked ? "KEEP" : "ENTER", areaLow, areaHigh, centerTol, overlapMin);
     
     // Convert overlay to pixel rect
     int ovX = static_cast<int>(overlay.x * imgW);
@@ -1141,18 +1385,18 @@ bool CardDetector::validateOverlayConstraints(
     float overlayCy = ovY + ovH / 2.0f;
     float overlayDiag = std::sqrt(static_cast<float>(ovW * ovW + ovH * ovH));
     
-    // 1. Area Closeness Constraint
+    // 1. Area Closeness Constraint (with hysteresis)
     float quadArea = static_cast<float>(cv::contourArea(quad));
     float areaRatio = quadArea / overlayArea;
     
-    if (areaRatio < overlay.areaToleranceLow || areaRatio > overlay.areaToleranceHigh) {
+    if (areaRatio < areaLow || areaRatio > areaHigh) {
         LOGD("validateOverlay: FAILED area closeness (ratio=%.3f, range=[%.2f,%.2f])",
-             areaRatio, overlay.areaToleranceLow, overlay.areaToleranceHigh);
+             areaRatio, areaLow, areaHigh);
         return false;
     }
     LOGD("validateOverlay: area closeness PASSED (ratio=%.3f)", areaRatio);
     
-    // 2. Center Alignment Constraint
+    // 2. Center Alignment Constraint (with hysteresis)
     float quadCx = 0, quadCy = 0;
     for (const auto& p : quad) {
         quadCx += p.x;
@@ -1163,7 +1407,7 @@ bool CardDetector::validateOverlayConstraints(
     
     float centerDist = std::sqrt((quadCx - overlayCx) * (quadCx - overlayCx) +
                                   (quadCy - overlayCy) * (quadCy - overlayCy));
-    float maxCenterDist = overlayDiag * overlay.centerToleranceRatio;
+    float maxCenterDist = overlayDiag * centerTol;
     
     if (centerDist > maxCenterDist) {
         LOGD("validateOverlay: FAILED center alignment (dist=%.1f > max=%.1f)",
@@ -1172,11 +1416,11 @@ bool CardDetector::validateOverlayConstraints(
     }
     LOGD("validateOverlay: center alignment PASSED (dist=%.1f)", centerDist);
     
-    // 3. Overlap Constraint
+    // 3. Overlap Constraint (with hysteresis)
     float overlapRatio = computeQuadOverlayOverlap(quad, imgW, imgH, overlay);
-    if (overlapRatio < overlay.overlapMinRatio) {
+    if (overlapRatio < overlapMin) {
         LOGD("validateOverlay: FAILED overlap (ratio=%.3f < min=%.2f)",
-             overlapRatio, overlay.overlapMinRatio);
+             overlapRatio, overlapMin);
         return false;
     }
     LOGD("validateOverlay: overlap PASSED (ratio=%.3f)", overlapRatio);
